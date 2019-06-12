@@ -36,6 +36,7 @@ class PostsController < ApplicationController
     if @post.save
        redirect_to @post, notice: "「#{@post.name}」を登録しました"
     else
+      flash.now[:alert] = '正しく入力してください'
       render :new
     end
   end
