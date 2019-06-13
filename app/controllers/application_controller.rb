@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   #add_flash_types :success, :info, :warning, :danger
   PER = 12
   include SessionsHelper
-  #def through_login
+  
   #  posts_path
 
   private
