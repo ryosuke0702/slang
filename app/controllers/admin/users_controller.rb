@@ -4,7 +4,6 @@ class Admin::UsersController < ApplicationController
 
   def index
     @users = User.all.order(created_at: :desc)
-
   end
 
   def show
@@ -21,10 +20,9 @@ class Admin::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
     if @user.save
-      #log_in @user
-      redirect_to admin_user_path(@user), notice: "「#{@user.name}」を登録しました"
+      log_in @user
+      redirect_to admin_user_path(@user), notice: "「#{@user.name}」を登録しました" #admin_user_path(@user)
     else
       render :new
     end

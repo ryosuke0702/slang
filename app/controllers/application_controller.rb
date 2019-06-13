@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
   before_action :login_required
   #add_flash_types :success, :info, :warning, :danger
   PER = 12
+  include SessionsHelper
+  #def through_login
+  #  posts_path
+
   private
 
   def current_user
