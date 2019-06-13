@@ -59,8 +59,10 @@ class PostsController < ApplicationController
   end
 
   def ensure_correct_user
-    if @current_user.id !=  params[:id].to_i
+    @post = Post.find(params[:id])
+    if @current_user.id != @post.user_id
       redirect_to posts_url, alert: "不正なアクセスです"
+
     end
   end
 end
