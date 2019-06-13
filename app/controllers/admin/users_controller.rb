@@ -1,5 +1,7 @@
 class Admin::UsersController < ApplicationController
   skip_before_action :login_required, only: [:new, :create]
+  before_action :ensure_correct_user, {only: [:edit, :update]}
+
   def index
     @users = User.all.order(created_at: :desc)
 
@@ -9,6 +11,8 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
     #@post = Post.find(params[:id])
     #@users = User.find(params[:user_id])
+    @posts = @user.posts.all.order(created_at: :desc).page(params[:page]).per(PER)
+    #@post = Post.find(params[:id])
   end
 
   def new
@@ -54,5 +58,11 @@ class Admin::UsersController < ApplicationController
 
   def require_admin
     redirect_to root_path unless current_user.admin?
+  end
+
+  def ensure_correct_user
+    if @current_user.id !=  params[:id].to_i
+      redirect_to posts_url, alert: "不正なアクセスです"
+    end
   end
 end

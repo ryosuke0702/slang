@@ -15,7 +15,7 @@ html
         - if current_user
           .nav-item= link_to 'スラング一覧', posts_path, class: 'nav-link'
           .nav-item= link_to 'スラング投稿', new_post_path, class: 'nav-link'
-          /.nav-item= link_to 'マイページ', "admin/users/<%= current_user.id %>", class: 'nav-link'
+          /.nav-item= link_to current_user.name, [:admin, @user], class: 'nav-link'
           .nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
           = current_user.name + 'としてログイン中'
         - else

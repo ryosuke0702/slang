@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   skip_before_action :login_required, only: [:top]
-  PER = 12
+  before_action :ensure_correct_user, {only: [:edit, :update]}
+
 
   def index
     @posts = Post.all.order(created_at: :desc).page(params[:page]).per(PER)
@@ -48,11 +49,18 @@ class PostsController < ApplicationController
   end
 
   def top
+    @user = User.find_by(id: session[:user_id])
   end
 
   private
 
   def post_params
     params.require(:post).permit(:name, :description)
+  end
+
+  def ensure_correct_user
+    if @current_user.id !=  params[:id].to_i
+      redirect_to posts_url, alert: "不正なアクセスです"
+    end
   end
 end

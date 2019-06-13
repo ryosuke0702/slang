@@ -1,19 +1,26 @@
 h1 ユーザー詳細
+p
+h4= @user.name
+/= @user.email
+/= @user.admin? ? '管理者権限あり':'管理者権限なし'
+/= @user.created_at
+/= @user.updated_at
+p 投稿スラング数
+h4= @user.posts.count
 
-= @user.name
-= @user.email
-= @user.admin? ? '管理者権限あり':'管理者権限なし'
-= @user.created_at
-= @user.updated_at
+- if @user == current_user
+  = link_to '編集', edit_admin_user_path, class: 'btn btn-primary'
+  = link_to '削除', [:admin, @user], method: :delete, class: 'btn btn-primary'
 
-/- if @posts.user_id == current_user.id
-= link_to '編集', edit_admin_user_path, class: 'btn btn-primary'
-= link_to '削除', [:admin, @user], method: :delete, class: 'btn btn-primary'
+h1= @user.name + 'さんの投稿スラング一覧'
 
-h1 このユーザーの投稿をここに表示したい
-.col-sm-4
-  .panel.panel-default
-    .panel-heading
-      h4 あ /= @post.user_id
-    .panel-body
-      h5 投稿の内容 /simple_format(h(@post.description), {}, sanitize: false, wrapper_tag: "div")
+- @posts.each do |post|
+  .col-sm-4
+    .panel.panel-default
+      .panel-heading
+        h4= link_to post.name, post
+      .panel-body
+        = post.description
+.mb-3
+  = paginate @posts
+  = page_entries_info @posts

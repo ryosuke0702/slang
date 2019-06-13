@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   before_action :login_required
   #add_flash_types :success, :info, :warning, :danger
-
+  PER = 12
   private
 
   def current_user
