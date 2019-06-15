@@ -4,9 +4,9 @@ h1 スラング一覧
   .col-sm-4
     .panel.panel-default
       .panel-heading
-        h4= link_to post.name, post
+        = link_to post.name, post
       .panel-body
-        h5= post.description
+        = post.description
 .mb-3
   = paginate @posts
   = page_entries_info @posts

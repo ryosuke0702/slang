@@ -5,9 +5,9 @@
   height: 100px;
 }
 
-.buttons{
+/*.buttons{
   margin-top: 0px;
-}
+}*/
 
 #error_explanation {
   color: red;
@@ -22,4 +22,25 @@
   .form-control {
     color: $state-danger-text;
   }
+}
+
+.bg-light{
+  background-color: #f8f9fa;
+}
+
+.footer{
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top:50px;
+}
+
+.top-picture{
+  background-image: url("ammie-ngo-690967-unsplash (1).jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width:100%;
+  opacity: 0.4;
 }

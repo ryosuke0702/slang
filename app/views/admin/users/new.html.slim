@@ -3,11 +3,6 @@ h1 ユーザー登録
   .col-md-6.col-md-offset-3
     = form_with model: [:admin, @user], local: true do |f|
       = render 'shared/error_messages'
-      .form-check
-        = f.label :admin, class: 'form-check-label' do
-          = f.check_box :admin, class: 'form-check-input'
-          | 管理者権限
-
       .form-group
         = f.label :name
         = f.text_field :name, class: 'form-control'
@@ -21,4 +16,11 @@ h1 ユーザー登録
       .form-group
         = f.label :password_confirmation, "Confirmation"
         = f.password_field :password_confirmation, class: 'form-control'
+
+        - if current_user
+          .form-check
+            = f.label :admin, class: 'form-check-label' do
+              = f.check_box :admin, class: 'form-check-input'
+              | 管理者権限
+
       = f.submit "登録する", class: "btn btn-primary"

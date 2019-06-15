@@ -4,8 +4,8 @@ h1 スラング投稿
     = form_with model: @post, local: true do |f|
       .form-group
         =f.label 'スラング'
-        =f.text_field :name, class: 'form-control'
+        =f.text_field :name, class: 'form-control', placeholder: 'Vãi:やばい!'
       .form-group
         =f.label '使用例'
-        =f.text_area :description, rows: 4, class: 'form-control'
+        =f.text_area :description, rows: 4, class: 'form-control', placeholder: 'Ngon vãi:めっちゃ美味しい!'
       =f.submit nil, class: 'btn btn-primary'
