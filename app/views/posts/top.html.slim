@@ -1,15 +1,18 @@
-h2 Vietnam slang
-h3 このアプリでベトナム語のスラングを勉強できます。実際に使ってみて友人を驚かせよう
-= image_tag 'ammie-ngo-690967-unsplash (1).jpg', class: 'top-picture'
 .top
-  - if current_user
-    = link_to 'スラング一覧', posts_path, class: 'btn btn-primary'
-    = link_to 'スラング投稿', new_post_path, class: 'btn btn-primary'
-    = link_to 'ログアウト', logout_path, method: :delete, class: 'btn btn-primary'
-    = link_to 'マイページ', [:admin, @user], class: 'btn btn-primary'
-    - if current_user.admin?
-      = link_to 'ユーザー一覧', admin_users_path, class: 'btn btn-primary'
+  h2 Vietnam slang
+  h3 このアプリでベトナム語のスラングを勉強できます。
+  h3 勉強して友人を驚かせてみよう
+  .toppage-buttons
+    - if current_user
+      = link_to 'スラング一覧', posts_path, class: 'btn btn-primary'
+      = link_to 'スラング投稿', new_post_path, class: 'btn btn-primary'
+      = link_to 'ログアウト', logout_path, method: :delete, class: 'btn btn-primary'
+      = link_to 'マイページ', [:admin, @user], class: 'btn btn-primary'
+      - if current_user.admin?
+        = link_to 'ユーザー一覧', admin_users_path, class: 'btn btn-primary'
+        = link_to 'ユーザー登録', new_admin_user_path, class: 'btn btn-primary'
+    - else
+      = link_to 'ログイン', '/login', class: 'btn btn-primary'
       = link_to 'ユーザー登録', new_admin_user_path, class: 'btn btn-primary'
-  - else
-    = link_to 'ログイン', '/login', class: 'btn btn-primary'
-    = link_to 'ユーザー登録', new_admin_user_path, class: 'btn btn-primary'
+.picture
+  = image_tag 'ammie-ngo-690967-unsplash (1).jpg', class: 'top-picture'

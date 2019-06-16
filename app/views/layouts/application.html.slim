@@ -2,28 +2,30 @@ doctype html
 html
   head
     title
-      |Slang
+      |Vietnam slang
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    .header
-      .app-title.navbar.navbar-expand-md.navbar-light.bg-light
-        .navbar-brand = link_to 'Vietnam Slang', '/'
+    .app-title.navbar.navbar-expand-md.navbar-light.bg-light
+      .navbar-brand = link_to 'Vietnam Slang', '/'
 
-        .navbar-nav
-          - if current_user
-            .nav-item= link_to 'スラング一覧', posts_path, class: 'nav-link'
-            .nav-item= link_to 'スラング投稿', new_post_path, class: 'nav-link'
-            /.nav-item= link_to current_user.name, [:admin, @user], class: 'nav-link'
-            .nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
-            = current_user.name + 'としてログイン中'
-          - else
-            .nav-item= link_to 'ログイン', login_path, class: 'nav-link'
-            .nav-item= link_to 'ユーザー登録', new_admin_user_path, class: 'nav-link'
+      ul.navbar-nav.navbar-right.nav
+        - if current_user
+          li.nav-item= link_to 'スラング一覧', posts_path, class: 'nav-link'
+          li.nav-item= link_to 'スラング投稿', new_post_path, class: 'nav-link'
+          /.nav-item= link_to current_user.name, [:admin, @user], class: 'nav-link'
+          li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
+          /li.nav-item= link_to 'マイページ', [:admin, @user], class: 'nav-link'
+        - else
+          li.nav-item= link_to 'ログイン', login_path, class: 'nav-link'
+          li.nav-item= link_to 'ユーザー登録', new_admin_user_path, class: 'nav-link'
 
     .container
+      .username
+        - if current_user
+          = current_user.name + 'としてログイン中'
       - if flash.notice.present?
         .alert.alert-success= flash.notice
       - elsif flash.alert.present?
