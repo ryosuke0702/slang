@@ -9,5 +9,5 @@ h1 スラング詳細画面
     h4= link_to @user.name, [:admin, @user]
 
     - if @post.user_id == current_user.id || current_user.admin?
-      h3 =link_to '編集', edit_post_path,class: 'btn btn-primary'
-      h3 =link_to '削除', @post, method: :delete, class: 'btn btn-primary'
+       =link_to '編集', edit_post_path,class: 'btn btn-primary'
+       =link_to '削除', @post, method: :delete, class: 'btn btn-default'

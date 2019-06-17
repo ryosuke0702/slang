@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   skip_before_action :login_required, only: [:top]
-  before_action :ensure_correct_user, {only: [:edit, :update]}
 
   def index
     @posts = Post.all.order(created_at: :desc).page(params[:page]).per(PER)
@@ -8,19 +7,22 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    #@user = User.find(params[:id])
     @user = User.find_by(id: @post.user_id)
-    #@posts = current_user.posts.build
     @posts = Post.all
   end
 
   def new
-    #@post = Post.new
     @post = current_user.posts.build
   end
 
   def edit
     @post = Post.find(params[:id])
+
+    if current_user.admin?
+      render :edit
+    elsif @current_user.id != @post.user_id
+      redirect_to posts_url, alert: "不正なアクセスです"
+    end
   end
 
   def update
@@ -31,8 +33,6 @@ class PostsController < ApplicationController
 
   def create
     @post =  Post.new(post_params.merge(user_id: current_user.id))
-    #@post = current_user.posts.build(post_params)
-
     if @post.save
        redirect_to @post, notice: "「#{@post.name}」を登録しました"
     else
@@ -55,13 +55,5 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:name, :description)
-  end
-
-  def ensure_correct_user
-    @post = Post.find(params[:id])
-    if @current_user.id != @post.user_id
-      redirect_to posts_url, alert: "不正なアクセスです"
-
-    end
   end
 end
