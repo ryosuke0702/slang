@@ -8,4 +8,8 @@ h1 スラング編集
       .form-group
         =f.label '使用例'
         =f.text_area :description, rows: 4, class: 'form-control'
-      =f.submit nil, class: 'btn btn-primary'
+      .submit
+        =f.submit nil, class: 'btn btn-primary'
+      .submit.submit-delete
+        - if @post.user_id == current_user.id || current_user.admin?
+        =link_to 'スラング削除', @post, method: :delete, class: 'btn btn-default'

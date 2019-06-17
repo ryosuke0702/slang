@@ -2,9 +2,9 @@ class SessionsController < ApplicationController
   skip_before_action :login_required
 
   def new
-    if not session[:user_id].nil?
-      redirect_to root_path, alert: "不正なアクセスです"
-    end
+    #if not session[:user_id].nil?
+    #  redirect_to root_path, alert: "不正なアクセスです"
+    #end
   end
 
   def create

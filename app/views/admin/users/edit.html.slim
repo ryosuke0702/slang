@@ -21,4 +21,8 @@ h1 ユーザー編集
       .form-group
         = f.label :password_confirmation, "Confirmation"
         = f.password_field :password_confirmation, class: 'form-control'
-      = f.submit "登録する", class: "btn btn-primary"
+      .submit
+        = f.submit "更新する", class: "btn btn-primary"
+      .submit.submit-delete
+        - if @user == current_user || current_user.admin?
+          = link_to 'アカウント削除', [:admin, @user], method: :delete, data: { confirm: "「#{@user.name}」を削除します。よろしいですか？"}, class: 'btn btn-default'

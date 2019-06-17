@@ -1,13 +1,14 @@
 h1 スラング詳細画面
 .row
   .col-md-6.col-md-offset-3
+    .user_name
+      h4= link_to @user.name, [:admin, @user]
     .panel.panel-default
       .panel-heading
         h4=  @post.name
       .panel-body
         h5= simple_format(h(@post.description), {}, sanitize: false, wrapper_tag: "div")
-    h4= link_to @user.name, [:admin, @user]
 
-    - if @post.user_id == current_user.id || current_user.admin?
-       =link_to '編集', edit_post_path,class: 'btn btn-primary'
-       =link_to '削除', @post, method: :delete, class: 'btn btn-default'
+    .submit
+      - if @post.user_id == current_user.id || current_user.admin?
+         =link_to '編集', edit_post_path,class: 'btn btn-primary'
