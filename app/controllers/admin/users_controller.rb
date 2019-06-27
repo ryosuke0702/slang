@@ -1,5 +1,6 @@
 class Admin::UsersController < ApplicationController
   #issue2のコメントです
+  #コメント
   skip_before_action :login_required, only: [:new, :create]
 
   def index
