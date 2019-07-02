@@ -1,8 +1,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.panel-heading{
+  height: 80px;
+  padding: 20px;
+}
+
 .panel-body{
-  height: 100px;
+  height: 150px;
+  padding: 20px;
 }
 
 /*.buttons{
