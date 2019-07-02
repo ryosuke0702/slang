@@ -32,30 +32,61 @@
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  margin-top:50px;
+  //margin-top:50px;
 }
 
-.top-picture{
+/*.top-picture{
   background-image: url("ammie-ngo-690967-unsplash (1).jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  width:100%;
+  width:100vw;
   opacity: 0.4;
-  margin-top:20px;
-}
+  margin-top:-40px;
+  //margin-left: -150px;
 
-.picture{
+}*/
+
+/*.picture{
   position: relative;
   z-index: -1;
-}
+
+}*/
 
 .top{
-  position: absolute;
-  padding-left: 20px;
-  padding-top: 20px;
+  //position: absolute;
+  //padding-left: 20px;
+  padding-top: 22px;
+  background-image: url("ammie-ngo-690967-unsplash (1).jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  //width:100vw;
+  //opacity: 0.4;
+  margin-top:-17px;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
 }
+
+
+/*@media screen and (max-width: 500px){
+  .top{
+    background-image: url("ammie-ngo-690967-unsplash (1).jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    //width:100vw;
+    //opacity: 0.4;
+    margin-top:-60px;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  }
+}*/
 
 .pagiWrapper{
   text-align: center;
@@ -74,7 +105,7 @@
 }
 
 .username{
-  text-align: right;
+  text-align: center;
 }
 
 .submit-delete{

@@ -18,14 +18,17 @@ html
           /.nav-item= link_to current_user.name, [:admin, @user], class: 'nav-link'
           li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
           /li.nav-item= link_to 'マイページ', [:admin, @user], class: 'nav-link'
+          .username
+            li.nav-item= current_user.name + "としてログイン"
+
         /- else
           li.nav-item= link_to 'ログイン', login_path, class: 'nav-link'
           li.nav-item= link_to 'ユーザー登録', new_admin_user_path, class: 'nav-link'
 
     .container
-      .username
+      /.username
         - if current_user
-          = current_user.name + 'としてログイン中'
+          = current_user.name
       - if flash.notice.present?
         .alert.alert-success= flash.notice
       - elsif flash.alert.present?
