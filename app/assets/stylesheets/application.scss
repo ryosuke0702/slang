@@ -96,6 +96,7 @@
 
 .pagiWrapper{
   text-align: center;
+
 }
 
 .submit{
@@ -119,5 +120,17 @@
 }
 
 .user_name{
+  text-align: right;
+}
+
+.pagination{
+  //display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: .25rem;
+  //justify-content: center !important;
+}
+
+.favorite{
   text-align: right;
 }

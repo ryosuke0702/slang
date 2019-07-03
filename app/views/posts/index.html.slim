@@ -7,6 +7,6 @@ h1 スラング一覧
         = link_to post.name, post
       .panel-body
         = post.description
-.mb-3
+.mb-3.pagiWrapper
   = paginate @posts
   /= page_entries_info @posts
