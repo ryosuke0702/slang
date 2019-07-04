@@ -1,12 +1,13 @@
 h1 スラング一覧
-
-- @posts.each do |post|
-  .col-lg-4.col-md-6.col-sm-12
-    .panel.panel-default
-      .panel-heading
-        = link_to post.name, post
-      .panel-body
-        = post.description
-.mb-3.pagiWrapper
+.container
+  .slang_list
+    - @posts.each do |post|
+      .col-lg-4.col-md-6.col-sm-12
+        .panel.panel-default
+          .panel-heading
+            = link_to post.name, post
+          .panel-body
+            = post.description
+.pagi_nation
   = paginate @posts
   /= page_entries_info @posts

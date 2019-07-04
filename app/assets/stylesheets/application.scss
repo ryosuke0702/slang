@@ -94,10 +94,6 @@
   }
 }*/
 
-.pagiWrapper{
-  text-align: center;
-
-}
 
 .submit{
   text-align: center;
@@ -123,14 +119,25 @@
   text-align: right;
 }
 
-.pagination{
-  //display: flex;
-  padding-left: 0;
-  list-style: none;
-  border-radius: .25rem;
-  //justify-content: center !important;
+.pagi_nation{
+  text-align: center;
 }
 
 .favorite{
   text-align: right;
+}
+
+.container{
+  //position:relative;
+}
+
+/*.pagiWrapper{
+  text-align: center;
+  //position: absolute;
+  //bottom: -100px;
+  margin: 0px 100px;
+}*/
+
+.slang_list{
+
 }
