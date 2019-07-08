@@ -3,13 +3,30 @@ h1 スラング詳細画面
   .col-md-6.col-md-offset-3
     .user_name
       h4= link_to @user.name, [:admin, @user]
-    .favorite
+
+
+    /.favorite
       span いいね数
       = @post.likes.count
       - if current_user.already_liked?(@post)
         = button_to 'いいねを取り消す', post_like_path(@post), method: :delete, remote: true
       - else
         = button_to 'いいね', post_likes_path(@post), method: :post, remote: true
+
+    /.favorite
+      - if post.liked_by?(current_user)
+        p
+          span お気に入り解除:
+          = link_to post.likes.count, post_likes_path(post.id), method: :delete, remote: true
+      - else
+        p
+          span お気に入り登録:
+          = link_to post.likes.count, post_likes_path(post.id), method: :post, remote: true
+
+
+    div id="likes_buttons_#{@post.id}"
+      = render partial: 'likes/like', locals: { post: @post}
+
     .panel.panel-default
       .panel-heading
         h4=  @post.name
