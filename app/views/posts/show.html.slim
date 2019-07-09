@@ -4,26 +4,6 @@ h1 スラング詳細画面
     .user_name
       h4= link_to @user.name, [:admin, @user]
 
-
-    /.favorite
-      span いいね数
-      = @post.likes.count
-      - if current_user.already_liked?(@post)
-        = button_to 'いいねを取り消す', post_like_path(@post), method: :delete, remote: true
-      - else
-        = button_to 'いいね', post_likes_path(@post), method: :post, remote: true
-
-    /.favorite
-      - if post.liked_by?(current_user)
-        p
-          span お気に入り解除:
-          = link_to post.likes.count, post_likes_path(post.id), method: :delete, remote: true
-      - else
-        p
-          span お気に入り登録:
-          = link_to post.likes.count, post_likes_path(post.id), method: :post, remote: true
-
-
     div id="likes_buttons_#{@post.id}"
       = render partial: 'likes/like', locals: { post: @post}
 
@@ -36,3 +16,11 @@ h1 スラング詳細画面
     .submit
       - if @post.user_id == current_user.id || current_user.admin?
          =link_to '編集', edit_post_path,class: 'btn btn-primary'
+
+    div
+     h4 コメント
+     .panel.panel-default.comment-panel
+       #comments_area
+         = render partial: 'comments/index', locals: { comments: @comments }
+       - if current_user
+         = render partial: 'comments/form', locals: { comment: @comment, post: @post }

@@ -10,6 +10,8 @@ class PostsController < ApplicationController
     @user = User.find_by(id: @post.user_id)
     @posts = Post.all
     #@like = Like.new
+    @comment = Comment.new
+    @comments = @post.comments #②
   end
 
   def new
