@@ -1,26 +1,21 @@
-/h1 ユーザー詳細
 
 h2= @user.name
-/= @user.email
-/= @user.admin? ? '管理者権限あり':'管理者権限なし'
-/= @user.created_at
-/= @user.updated_at
-p 投稿スラング数
-h4= @user.posts.count
-
-- if @user == current_user || current_user.admin?
-  = link_to '編集', edit_admin_user_path, class: 'btn btn-primary'
+span 投稿スラング数
+span= @user.posts.count
+p
+  - if @user == current_user || current_user.admin?
+    = link_to 'ユーザー編集', edit_admin_user_path, class: 'btn btn-primary'
 
 
 h1= @user.name + 'さんの投稿スラング一覧'
-
-- @posts.each do |post|
-  .col-sm-4
-    .panel.panel-default
-      .panel-heading
-        h4= link_to post.name, post
-      .panel-body
-        = post.description
-.mb-3
+.container
+  - @posts.each do |post|
+    .col-sm-4
+      .panel.panel-default
+        .panel-heading
+          h4= link_to post.name, post
+        .panel-body
+          = post.description
+.pagi_nation
   = paginate @posts
   /= page_entries_info @posts
