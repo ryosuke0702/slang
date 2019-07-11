@@ -1,4 +1,4 @@
-h2 いいねしたスラング
+h2= @user.name + "さんがいいねしたスラング"
 .container
   - @likes.each do |like|
     - post = Post.find_by(id: like.post_id)
