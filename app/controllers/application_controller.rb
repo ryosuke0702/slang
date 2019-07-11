@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   PER = 12
   include SessionsHelper
 
+  #def nav
+  #  @user = User.find_by(id: session[:user_id])
+  #end
+
   private
 
   def current_user
