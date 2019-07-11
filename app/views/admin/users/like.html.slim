@@ -1,0 +1,13 @@
+h2 いいねしたスラング
+.container
+  - @likes.each do |like|
+    - post = Post.find_by(id: like.post_id)
+    .col-sm-4
+      .panel.panel-default
+        .panel-heading
+          h4= link_to post.name, post
+        .panel-body
+          = post.description
+.pagi_nation
+  = paginate @posts
+  /= page_entries_info @posts
