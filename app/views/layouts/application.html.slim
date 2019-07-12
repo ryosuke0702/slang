@@ -15,15 +15,11 @@ html
         - if current_user
           li.nav-item= link_to 'スラング一覧', posts_path, class: 'nav-link'
           li.nav-item= link_to 'スラング投稿', new_post_path, class: 'nav-link'
-          /.nav-item= link_to current_user.name, [:admin, @user], class: 'nav-link'
           li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
-          /li.nav-item= link_to 'マイページ', [:admin, @user], class: 'nav-link'
-          .username
+          - if @user
+            li.nav-item= link_to 'マイページ', admin_user_path(@user), class: 'nav-link'
+          /.username
             li.nav-item= current_user.name + "としてログイン"
-
-        /- else
-          li.nav-item= link_to 'ログイン', login_path, class: 'nav-link'
-          li.nav-item= link_to 'ユーザー登録', new_admin_user_path, class: 'nav-link'
 
     .container
       /.username

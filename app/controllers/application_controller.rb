@@ -1,12 +1,8 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user
   before_action :login_required
-  PER = 12
+  PER = 9
   include SessionsHelper
-
-  #def nav
-  #  @user = User.find_by(id: session[:user_id])
-  #end
 
   private
 
