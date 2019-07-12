@@ -6,6 +6,6 @@
       p
         | コメント：
         = comment.content
-      - if comment.user == current_user
+      - if comment.user == current_user || current_user.admin?
         p
           = link_to 'コメントを削除する', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true

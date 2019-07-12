@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   skip_before_action :login_required, only: [:top]
 
   def index
+    @user = User.find_by(id: session[:user_id])
     @posts = Post.all.order(created_at: :desc).page(params[:page]).per(PER)
   end
 
@@ -19,6 +20,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @user = User.find_by(id: session[:user_id])
     @post = Post.find(params[:id])
 
     if current_user.admin?

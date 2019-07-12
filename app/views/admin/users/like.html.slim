@@ -1,4 +1,7 @@
+h3= @user.name
 h2 いいねしたスラング
+span いいねの数:
+span= @user.likes.count
 .container
   - @likes.each do |like|
     - post = Post.find_by(id: like.post_id)
@@ -8,6 +11,6 @@ h2 いいねしたスラング
           h4= link_to post.name, post
         .panel-body
           = post.description
-.pagi_nation
+/.pagi_nation
   = paginate @posts
   /= page_entries_info @posts
