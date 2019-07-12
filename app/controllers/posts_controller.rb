@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     @posts = Post.all
     #@like = Like.new
     @comment = Comment.new
-    @comments = @post.comments #②
+    @comments = @post.comments
   end
 
   def new

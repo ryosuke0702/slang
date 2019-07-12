@@ -1,7 +1,9 @@
+
 h3= @user.name
 h2 いいねしたスラング
 span いいねの数:
 span= @user.likes.count
+
 .container
   - @likes.each do |like|
     - post = Post.find_by(id: like.post_id)

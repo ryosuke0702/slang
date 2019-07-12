@@ -8,6 +8,7 @@ p
 h2= @user.name + 'さんの投稿スラング一覧'
 span 投稿スラング数:
 span= @user.posts.count
+
 .container
   - @posts.each do |post|
     .col-sm-4
