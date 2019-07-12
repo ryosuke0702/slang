@@ -14,6 +14,7 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts.all.order(created_at: :desc).page(params[:page]).per(PER)
     #@likes = Like.where(user_id: @user.id)
+    #@users = User.find_by(id: @commnet.user_id)
   end
 
   def like
