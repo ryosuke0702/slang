@@ -17,6 +17,7 @@ class PostsController < ApplicationController
 
   def new
     @post = current_user.posts.build
+    @user = User.find_by(id: session[:user_id])
   end
 
   def edit
