@@ -9,7 +9,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     meta name="viewport" content="width=device-width"
   body
-    .app-title.navbar.navbar-expand-lg.navbar-light.bg-light
+    /.app-title.navbar.navbar-expand-lg.navbar-light.bg-light
       .navbar-brand = link_to 'Vietnam Slang', '/'
 
       ul.navbar-nav.navbar-right.nav
@@ -22,6 +22,29 @@ html
           /.username
             li.nav-item= current_user.name + "としてログイン"
 
+    nav.navbar.navbar-default.navbar-expand-lg.navbar-light.bg-light
+      .container-fluid
+        <!-- Brand and toggle get grouped for better mobile display -->
+        .navbar-header
+          button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+
+          <a class="navbar-brand" href="/">Vietnam Slang</a>
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            - if current_user
+              li= link_to 'スラング一覧', posts_path
+              li= link_to 'スラング投稿', new_post_path
+              li= link_to 'ログアウト', logout_path, method: :delete
+              - if @user
+                li= link_to 'マイページ', admin_user_path(@user)
+
     .container
       /.username
         - if current_user
@@ -33,5 +56,5 @@ html
 
       = yield
 
-    .footer.bg-light.
+    .footer.bg-light
        h4 Vietnam Slang

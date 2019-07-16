@@ -1,17 +1,16 @@
 .top
-  h2 Vietnam slang
-  p このアプリでベトナム語のスラングを勉強したり
+  h4 ベトナム語のスラングを勉強したり
      あなたの知っているスラングを投稿できます。
   h4 勉強して友人を驚かせてみよう
   .toppage-buttons
     - if current_user
-      = link_to 'スラング一覧', posts_path, class: 'btn btn-primary'
-      = link_to 'スラング投稿', new_post_path, class: 'btn btn-primary'
-      = link_to 'ログアウト', logout_path, method: :delete, class: 'btn btn-primary'
-      = link_to 'マイページ', [:admin, @user], class: 'btn btn-primary'
+      = link_to 'スラングを見てみる', posts_path, class: 'btn-look'
+      = link_to 'スラング投稿する', new_post_path, class: 'btn-post'
+      /= link_to 'ログアウト', logout_path, method: :delete
+      /= link_to 'マイページ', [:admin, @user]
       - if current_user.admin?
-        = link_to 'ユーザー一覧', admin_users_path, class: 'btn btn-primary'
-        = link_to 'ユーザー登録', new_admin_user_path, class: 'btn btn-primary'
+        = link_to 'ユーザー一覧', admin_users_path, class: 'btn btn-outline-danger'
+        = link_to 'ユーザー登録', new_admin_user_path, class: 'btn btn-outline-danger'
     - else
       = link_to 'ログイン', '/login', class: 'btn btn-primary'
       = link_to 'ユーザー登録', new_admin_user_path, class: 'btn btn-primary'
