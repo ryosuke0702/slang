@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+                      //パネル系
 .panel-heading{
   height: 80px;
   padding: 20px;
@@ -15,10 +16,15 @@
 .comment-panel{
   padding: 20px;
 }
-/*.buttons{
-  margin-top: 0px;
-}*/
 
+.panel,.panel-default{
+  margin-top: 2rem;
+}
+
+.panel-above{
+  margin-bottom: -15px;
+}
+                      //エラー
 #error_explanation {
   color: red;
   ul {
@@ -34,18 +40,33 @@
   }
 }
 
+                              //ヘッダー
 .bg-light{
   background-color: #f8f9fa;
 }
 
-.footer{
-  text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  //margin-top:50px;
+.navbar-brand{
+  font-weight: bold;
 }
 
+.fixed-top{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
 
+                              //フッター
+.footer{
+  text-align: center;
+  padding-top: 1rem !important;
+  //padding-bottom: 20px;
+  //margin-top:50px;
+  padding-bottom: 1rem !important;
+}
+
+                            //container系
 .top{
   //position: absolute;
   //padding-left: 20px;
@@ -63,16 +84,19 @@
   text-align: center;
 }
 
-
-
-.submit{
-  text-align: center;
+.top-text{
+  margin-top:25px;
 }
 
+body{
+  padding-top: 5.5rem;
+}
 
+.container{
+  min-height: 85vh;
+}
 
-
-.username{
+.submit{
   text-align: center;
 }
 
@@ -80,8 +104,14 @@
   margin-top: 20px;
 }
 
-.user_name{
+.username{
+  text-align: center;
+}
+
+.user_name,.panel-footer{
   text-align: right;
+  font-weight: bold;
+  //padding-right: 10px
 }
 
 .pagi_nation{
@@ -92,11 +122,6 @@
   text-align: right;
 }
 
-
-.navbar-brand{
-  font-weight: bold;
-}
-
 .toppage-buttons{
   padding-top: 30px;
   font-weight: bold;
@@ -104,6 +129,15 @@
 }
 
 .btn-look,.btn-post,.btn-login,.btn-user{
-  margin-right: 20px;
+  margin-right: 10px;
   border-bottom : solid 2px #0091ff ;
+}
+
+                                    //コメント
+.comment-box{
+  min-width: 30vh;
+}
+
+.comment-panel{
+  margin-top: -0.5rem;
 }

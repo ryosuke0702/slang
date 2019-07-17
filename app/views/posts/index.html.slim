@@ -1,4 +1,4 @@
-h1 スラング一覧
+h2 スラング一覧
 .container
   .slang_list
     - @posts.each do |post|
@@ -8,6 +8,10 @@ h1 スラング一覧
             = link_to post.name, post
           .panel-body
             = post.description
+          .panel-footer
+            .user_name.glyphicon.glyphicon-user
+              = link_to post.user.name, post
+
 .pagi_nation
   = paginate @posts
   /= page_entries_info @posts

@@ -17,6 +17,7 @@ span= @user.posts.count
           h4= link_to post.name, post
         .panel-body
           = post.description
+    
 .pagi_nation
   = paginate @posts
   /= page_entries_info @posts
