@@ -2,9 +2,9 @@
   .panel.panel-default.comment-panel
     - unless comment.id.nil?
       p
+        .glyphicon.glyphicon-user
         = link_to "#{comment.user.name}", [:admin, comment.user]
       p
-        | コメント：
         = simple_format(h(comment.content), {}, sanitize: false, wrapper_tag: "div")
       - if comment.user == current_user || current_user.admin?
         p
