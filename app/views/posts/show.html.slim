@@ -1,11 +1,12 @@
-h1 スラング詳細画面
+h2 スラング詳細画面
 .row
   .col-md-6.col-md-offset-3
-    .user_name
-      h4= link_to @user.name, [:admin, @user]
+    .panel-above
+      .user_name
+        h4= link_to @user.name, [:admin, @user]
 
-    div id="likes_buttons_#{@post.id}"
-      = render partial: 'likes/like', locals: { post: @post}
+      div id="likes_buttons_#{@post.id}"
+        = render partial: 'likes/like', locals: { post: @post}
 
     .panel.panel-default
       .panel-heading

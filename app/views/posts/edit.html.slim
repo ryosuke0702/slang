@@ -1,4 +1,4 @@
-h1 スラング編集
+h2 スラング編集
 .row
   .col-md-6.col-md-offset-3
     = form_with model: @post, local: true do |f|
@@ -7,7 +7,7 @@ h1 スラング編集
         =f.text_field :name, class: 'form-control'
       .form-group
         =f.label '使用例'
-        =f.text_area :description, rows: 4, class: 'form-control'
+        =f.text_area :description, rows: 6, class: 'form-control'
       .submit
         =f.submit nil, class: 'btn btn-primary'
       .submit.submit-delete

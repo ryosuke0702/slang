@@ -2,7 +2,10 @@ class PostsController < ApplicationController
   skip_before_action :login_required, only: [:top]
 
   def index
-    @user = User.find_by(id: session[:user_id])
+    #@post = Post.find(params[:id])
+    #@users = User.find_by(id: @post.user_id)
+    #@users = User.find(user: params[:name])
+    @user = User.find_by(id: session[:user_id])#マイページ
     @posts = Post.all.order(created_at: :desc).page(params[:page]).per(PER)
   end
 
@@ -10,18 +13,17 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = User.find_by(id: @post.user_id)
     @posts = Post.all
-    #@like = Like.new
     @comment = Comment.new
     @comments = @post.comments
   end
 
   def new
     @post = current_user.posts.build
-    @user = User.find_by(id: session[:user_id])
+    @user = User.find_by(id: session[:user_id])#マイページ
   end
 
   def edit
-    @user = User.find_by(id: session[:user_id])
+    @user = User.find_by(id: session[:user_id])#マイページ
     @post = Post.find(params[:id])
 
     if current_user.admin?
@@ -54,7 +56,7 @@ class PostsController < ApplicationController
   end
 
   def top
-    @user = User.find_by(id: session[:user_id])
+    @user = User.find_by(id: session[:user_id])#マイページ
   end
 
   private
