@@ -28,6 +28,10 @@
 .glyphicon.glyphicon-user{
   margin-right: 5px;
 }
+
+.category{
+  text-align: right;
+}
                       //エラー
 #error_explanation {
   color: red;
@@ -123,12 +127,19 @@ body{
   //padding-right: 10px
 }
 
+.users_name{
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: -20px;
+}
+
 .pagi_nation{
   text-align: center;
 }
 
 .favorite{
   text-align: right;
+  margin-top: -15px;
 }
 
 .toppage-buttons{
