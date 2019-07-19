@@ -2,18 +2,19 @@ h2 スラング詳細画面
 .row
   .col-md-6.col-md-offset-3
     .panel-above
-      .user_name
+      .users_name
         .glyphicon.glyphicon-user
         = link_to @user.name, [:admin, @user]
-
-      div id="likes_buttons_#{@post.id}"
-        = render partial: 'likes/like', locals: { post: @post}
+      /p.category
+        =@post.category.name
 
     .panel.panel-default
       .panel-heading
         h4=  @post.name
       .panel-body
         h5= simple_format(h(@post.description), {}, sanitize: false, wrapper_tag: "div")
+    div id="likes_buttons_#{@post.id}"
+      = render partial: 'likes/like', locals: { post: @post}
 
     .submit
       - if @post.user_id == current_user.id || current_user.admin?

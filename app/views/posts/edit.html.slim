@@ -8,6 +8,9 @@ h2 スラング編集
       .form-group
         =f.label '使用例'
         =f.text_area :description, rows: 6, class: 'form-control'
+      .form-group
+        =f.label '失礼レベル(使える相手)'
+        = select_tag 'post[category_id]', options_from_collection_for_select(@categories, :id, :name), class: 'form-control'
       .submit
         =f.submit nil, class: 'btn btn-primary'
       .submit.submit-delete

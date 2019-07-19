@@ -4,9 +4,13 @@ h2 スラング投稿
     = form_with model: @post, local: true do |f|
       .form-group
         =f.label 'スラング'
-        =f.text_field :name, class: 'form-control', placeholder: 'Vãi'
+        =f.text_field :name, class: 'form-control', placeholder: 'ここにスラングを入力してください'
       .form-group
-        =f.label '使用例'
-        =f.text_area :description, rows: 6, class: 'form-control', placeholder: 'Ngon vãi めっちゃ美味しい!'
+        =f.label '具体例'
+        =f.text_area :description, rows: 6, class: 'form-control', placeholder: '使用例、書き言葉or話し言葉?、補足情報など'
+      .form-group
+        =f.label '失礼レベル(使える相手)'
+        = select_tag 'post[category_id]', options_from_collection_for_select(@categories, :id, :name), class: 'form-control'
+
       .submit
         =f.submit nil, class: 'btn btn-primary'

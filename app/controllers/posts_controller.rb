@@ -7,6 +7,7 @@ class PostsController < ApplicationController
     #@users = User.find(user: params[:name])
     @user = User.find_by(id: session[:user_id])#マイページ
     @posts = Post.all.order(created_at: :desc).page(params[:page]).per(PER)
+
   end
 
   def show
@@ -40,7 +41,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post =  Post.new(post_params.merge(user_id: current_user.id))
+    @post = Post.new(post_params.merge(user_id: current_user.id))
+
     if @post.save
        redirect_to @post, notice: "「#{@post.name}」を登録しました"
     else
@@ -62,6 +64,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:name, :description)
+    params.require(:post).permit(:name, :description, :category_id)
   end
 end
