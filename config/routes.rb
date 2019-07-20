@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     resources :comments
 
   end
-  get '/categories/:id', to:'categories#show'
+  resources :categories
+  #get '/categories/:id', to:'categories#show'
 end
