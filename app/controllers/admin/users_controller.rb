@@ -11,10 +11,9 @@ class Admin::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @posts = @user.posts.all.order(created_at: :desc).page(params[:page]).per(PER)
-    #@likes = Like.where(user_id: @user.id)
-    #@users = User.find_by(id: @commnet.user_id)
+    @user = User.find_by(id: session[:user_id])#マイページ
+    @users = User.find(params[:id])
+    @posts = @users.posts.all.order(created_at: :desc).page(params[:page]).per(PER)
   end
 
   def like

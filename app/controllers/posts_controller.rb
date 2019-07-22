@@ -2,9 +2,6 @@ class PostsController < ApplicationController
   skip_before_action :login_required, only: [:top]
 
   def index
-    #@post = Post.find(params[:id])
-    #@users = User.find_by(id: @post.user_id)
-    #@users = User.find(user: params[:name])
     @user = User.find_by(id: session[:user_id])#マイページ
     @posts = Post.all.order(created_at: :desc).page(params[:page]).per(PER)
 
