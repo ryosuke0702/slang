@@ -23,6 +23,7 @@
 
 .panel,.panel-default{
   margin-top: 2rem;
+  border-radius: 8px;
 }
 
 .panel-above{
@@ -73,6 +74,15 @@
   text-decoration: underline;
 }
 
+.btn-header{
+  //padding: -6px -10px;
+  //color: #8c2a2a;
+  //font-size: 6px;
+  //border: 10px solid grey;
+  //border-radius: 4px;
+  //transition: .3s all;
+}
+
                               //フッター
 .footer{
   text-align: center;
@@ -96,6 +106,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  //height: 450px;
   //width:100vw;
   //opacity: 0.4;
   margin-top:-18px;
@@ -110,6 +121,7 @@
 
 body{
   padding-top: 5.5rem;
+  background: #f7f7f7;
 }
 
 .container{
