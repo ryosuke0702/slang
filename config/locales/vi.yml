@@ -1,0 +1,54 @@
+vi:
+  posts:
+    top:
+      top-text: "Người N có thể học slang tiếng V ở đây"
+      top-text2: "Hãy cho tôi biết kiến thức của bạn"
+      btn-look: "xem slang"
+      btn-post: "post slang"
+      btn-login: "Đăng nhập"
+      btn-user: "Đăng ký"
+    index:
+      btn-header: "Danh sách"
+    show:
+      show-top: "Chi tiết"
+      show-comment: "Nhận xét"
+      show-edit: "Chỉnh sửa"
+    edit:
+      slang-edit: "Chỉnh sửa"
+      edit-top: "Chỉnh sửa slang"
+      edit-label: "Slang"
+      edit-label2: "Ví dụ sử dụng"
+      edit-label3: "Mức độ thô lỗ(Cho ai?)"
+      alert: "Truy cập không hợp lệ"
+    new:
+      edit-label: "Slang"
+      edit-label2: "Ví dụ sử dụng"
+      edit-label3: "Mức độ thô lỗ(Cho ai?)"
+      btn-header2: "post slang"
+      place-holder: "Slang gì?"
+      place-holder2: "Sử dụng các trường hợp, từ viết hoặc lời nói, thông tin bổ sung, vv"
+    flash:
+      alert: "Vui lòng nhập chính xác"
+
+
+
+  layouts:
+    application:
+      btn-header: "Danh sách"
+      btn-header2: "post slang"
+      btn-header3: "page của tôi"
+      btn-header4: "Thoát ra"
+  admin:
+    users:
+      show:
+        like-slang: "Bài viết thích"
+        slang-count: "Số lượng bài viết："
+        user-edit: "Chỉnh sửa"
+      edit:
+        user-edit: "Chỉnh sửa"
+      like:
+        like-slang: "Bài viết thích"
+        like-count: "Số lượt thích："
+  sessions:
+    flash:
+      alert: "Địa chỉ email và mật khẩu không chính xác"

@@ -34,16 +34,16 @@ class PostsController < ApplicationController
   def update
     post = Post.find(params[:id])
     post.update!(post_params)
-    redirect_to posts_url, notice: "「#{post.name}」を更新しました"
+    redirect_to posts_url, notice: "Updated「#{post.name}」"
   end
 
   def create
     @post = Post.new(post_params.merge(user_id: current_user.id))
 
     if @post.save
-       redirect_to @post, notice: "「#{@post.name}」を登録しました"
+       redirect_to @post, notice: "Posted「#{@post.name}」"
     else
-      flash.now[:alert] = '正しく入力してください'
+      flash.now[:alert] = t'posts.flash.alert'
       render :new
     end
   end
@@ -51,7 +51,7 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    redirect_to posts_url, notice: "「#{post.name}」を削除しました"
+    redirect_to posts_url, notice: "Deleted「#{post.name}」"
   end
 
   def top

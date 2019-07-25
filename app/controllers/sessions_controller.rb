@@ -11,16 +11,16 @@ class SessionsController < ApplicationController
     user = User.find_by(email: session_params[:email])
     if user&.authenticate(session_params[:password])
       session[:user_id] = user.id
-      redirect_to root_path, notice: 'ログインしました'
+      redirect_to root_path, notice: 'login'
     else
-      flash.now[:alert] = 'メールアドレスとパスワードが正しくありません'
+      flash.now[:alert] = t'sessions.flash.alert'
       render  :new
     end
   end
 
   def destroy
     reset_session
-    redirect_to root_path, notice: 'ログアウトしました'
+    redirect_to root_path, notice: 'Logout'
   end
 
   private

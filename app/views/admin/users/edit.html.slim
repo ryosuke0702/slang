@@ -1,4 +1,4 @@
-h3 ユーザー編集
+h3 = t('.user-edit')
 .row
   .col-md-6.col-md-offset-3
     = form_with model: [:admin, @user], local: true do |f|
@@ -22,7 +22,7 @@ h3 ユーザー編集
         = f.label :password_confirmation, "Confirmation"
         = f.password_field :password_confirmation, class: 'form-control'
       .submit
-        = f.submit "更新する", class: "btn btn-primary"
+        = f.submit "Update", class: "btn btn-primary"
       .submit.submit-delete
         - if @user == current_user || current_user.admin?
-          = link_to 'アカウント削除', [:admin, @user], method: :delete, data: { confirm: "「#{@user.name}」を削除します。よろしいですか？"}, class: 'btn btn-default'
+          = link_to 'Delete', [:admin, @user], method: :delete, data: { confirm: "「#{@user.name}」を削除します。よろしいですか？"}, class: 'btn btn-default'

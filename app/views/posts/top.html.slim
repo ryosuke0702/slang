@@ -1,15 +1,15 @@
 .top
-  h4.top-text ベトナム語のスラングを勉強できます
-  h4 スラングで友人を驚かせてみよう！
+  h4 = t('.top-text')
+  h4 = t('.top-text2')
   .toppage-buttons
     - if current_user
-      = link_to 'スラングを見てみる', posts_path, class: 'btn-look'
-      = link_to 'スラング投稿する', new_post_path, class: 'btn-post'
+      = link_to t('.btn-look'), posts_path, class: 'btn-look'
+      = link_to t('.btn-post'), new_post_path, class: 'btn-post'
       /= link_to 'ログアウト', logout_path, method: :delete
       /= link_to 'マイページ', [:admin, @user]
       - if current_user.admin?
         = link_to 'ユーザー一覧', admin_users_path, class: 'btn btn-outline-danger'
         = link_to 'ユーザー登録', new_admin_user_path, class: 'btn btn-outline-danger'
     - else
-      = link_to 'ログイン', '/login', class: 'btn-login'
-      = link_to 'ユーザー登録', new_admin_user_path, class: 'btn-user'
+      = link_to t('.btn-login'), '/login', class: 'btn-login'
+      = link_to t('.btn-user'), new_admin_user_path, class: 'btn-user'

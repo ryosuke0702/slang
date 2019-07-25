@@ -36,7 +36,7 @@ class Admin::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      redirect_to admin_user_path(@user), notice: "「#{@user.name}」を登録しました"
+      redirect_to admin_user_path(@user), notice: "Created「#{@user.name}」"
     else
       render :new
     end
@@ -55,7 +55,7 @@ class Admin::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to admin_user_path(@user), notice: "「#{@user.name}」を更新しました"
+      redirect_to admin_user_path(@user), notice: "Updated「#{@user.name}」"
     else
       render :edit
     end
@@ -64,7 +64,7 @@ class Admin::UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to admin_users_url, notice: "「#{@user.name}」を削除しました"
+    redirect_to admin_users_url, notice: "Deleted「#{@user.name}」"
   end
 
   private
