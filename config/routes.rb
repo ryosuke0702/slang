@@ -1,19 +1,20 @@
 Rails.application.routes.draw do
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
+    get '/login', to: 'sessions#new'
+    post '/login', to: 'sessions#create'
+    delete '/logout', to: 'sessions#destroy'
 
-  namespace :admin do
-    resources :users
-    get '/admin/users/:id/favorite', to: 'users#like'
+    namespace :admin do
+      resources :users
+      get '/admin/users/:id/favorite', to: 'users#like'
+    end
+
+    root to: 'posts#top'
+    resources :posts do
+      resources :likes, only: [:create, :destroy]
+      resources :comments
+
+    end
+    resources :categories
   end
-
-  root to: 'posts#top'
-  resources :posts do
-    resources :likes, only: [:create, :destroy]
-    resources :comments
-
-  end
-  resources :categories
-  #get '/categories/:id', to:'categories#show'
 end
