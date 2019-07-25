@@ -31,6 +31,10 @@ ja:
     flash:
       alert: "正しく入力してください"
 
+  comments:
+    index:
+      comment-delete: "コメントを削除する"
+
   layouts:
     application:
       btn-header: "スラング一覧"
@@ -53,6 +57,9 @@ ja:
   sessions:
     flash:
       alert: "メールアドレスとパスワードが正しくありません"
+
+
+
 
 
   activerecord:

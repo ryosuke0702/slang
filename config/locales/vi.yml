@@ -11,7 +11,7 @@ vi:
       btn-header: "Danh sách"
     show:
       show-top: "Chi tiết"
-      show-comment: "Nhận xét"
+      show-comment: "Bình luận"
       show-edit: "Chỉnh sửa"
     edit:
       slang-edit: "Chỉnh sửa"
@@ -30,7 +30,9 @@ vi:
     flash:
       alert: "Vui lòng nhập chính xác"
 
-
+  comments:
+    index:
+      comment-delete: "Xóa bình luận"
 
   layouts:
     application:
@@ -38,6 +40,7 @@ vi:
       btn-header2: "post slang"
       btn-header3: "page của tôi"
       btn-header4: "Thoát ra"
+
   admin:
     users:
       show:
@@ -49,6 +52,7 @@ vi:
       like:
         like-slang: "Bài viết thích"
         like-count: "Số lượt thích："
+
   sessions:
     flash:
       alert: "Địa chỉ email và mật khẩu không chính xác"
