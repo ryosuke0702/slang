@@ -1,43 +1,53 @@
 vi:
   posts:
     top:
-      top-text: "Người N có thể học slang tiếng V ở đây"
-      top-text2: "Hãy cho tôi biết kiến thức của bạn"
-      btn-look: "xem slang"
-      btn-post: "post slang"
+      top-text: "Cùng nhau học từ lóng tiếng Việt"
+      top-text2: "Hãy chia sẻ kiến thức của bạn cho mọi người nhé"
+      btn-look: "Danh sách từ lóng"
+      btn-post: "Đăng bài"
       btn-login: "Đăng nhập"
       btn-user: "Đăng ký"
     index:
-      btn-header: "Danh sách"
+      btn-header: "Danh sách từ lóng"
+      category: "Phân loại theo mức độ không lịch sự"
+      category-1: "Tất cả"
+      category.name: "a"
     show:
       show-top: "Chi tiết"
-      show-comment: "Nhận xét"
+      show-comment: "Bình luận"
       show-edit: "Chỉnh sửa"
     edit:
       slang-edit: "Chỉnh sửa"
       edit-top: "Chỉnh sửa slang"
-      edit-label: "Slang"
-      edit-label2: "Ví dụ sử dụng"
-      edit-label3: "Mức độ thô lỗ(Cho ai?)"
+      edit-label: "Từ lóng"
+      edit-label2: "Ví dụ cách sử dụng"
+      edit-label3: "Mức độ KHôNG lịch sự và đối tượng sử dụng"
       alert: "Truy cập không hợp lệ"
+      delete-button: "Xoá"
     new:
-      edit-label: "Slang"
-      edit-label2: "Ví dụ sử dụng"
-      edit-label3: "Mức độ thô lỗ(Cho ai?)"
-      btn-header2: "post slang"
-      place-holder: "Slang gì?"
-      place-holder2: "Sử dụng các trường hợp, từ viết hoặc lời nói, thông tin bổ sung, vv"
+      edit-label: "Từ lóng"
+      edit-label2: "Ví dụ cách sử dụng"
+      edit-label3: "Mức độ KHôNG lịch sự và đối tượng sử dụng"
+      btn-header2: "Đăng bài"
+      place-holder: "Nhập từ lóng?"
+      place-holder2: "Nhập ví dụ về cách sử dụng, là ngôn ngữ nói hay ngôn ngữ viết, các thông tin bổ sung khác,..."
     flash:
       alert: "Vui lòng nhập chính xác"
 
-
+  comments:
+    index:
+      comment-delete: "Xóa bình luận"
+    form:
+      comment-write: "Nhập bình luận"
+      comment-submit: "Bình luận"
 
   layouts:
     application:
-      btn-header: "Danh sách"
-      btn-header2: "post slang"
+      btn-header: "Danh sách từ lóng"
+      btn-header2: "Đăng bài"
       btn-header3: "page của tôi"
-      btn-header4: "Thoát ra"
+      btn-header4: "Thoát"
+
   admin:
     users:
       show:
@@ -49,6 +59,11 @@ vi:
       like:
         like-slang: "Bài viết thích"
         like-count: "Số lượt thích："
+      new:
+        user-regi: "Đăng ký"
+
   sessions:
     flash:
       alert: "Địa chỉ email và mật khẩu không chính xác"
+    new:
+      login: "Đăng nhập"

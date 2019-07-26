@@ -8,7 +8,7 @@
         = simple_format(h(comment.content), {}, sanitize: false, wrapper_tag: "div")
       - if comment.user == current_user || current_user.admin?
         p
-          = link_to 'コメントを削除する', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true
+          = link_to t('.comment-delete'), post_comment_path(comment.post_id, comment.id), method: :delete, remote: true
 
 
 

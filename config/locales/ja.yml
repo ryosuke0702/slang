@@ -10,6 +10,9 @@ ja:
       btn-user: "ユーザー登録"
     index:
       btn-header: "スラング一覧"
+      category: "カテゴリー"
+      category-1: "カテゴリ一覧"
+      category-name: "あ"
     show:
       show-top: "スラング詳細画面"
       show-comment: "コメント"
@@ -21,6 +24,7 @@ ja:
       edit-label2: "使用例"
       edit-label3: "失礼レベル(使える相手)"
       alert: "不正なアクセスです"
+      delete-button: "削除"
     new:
       edit-label: "スラング"
       edit-label2: "使用例"
@@ -49,11 +53,21 @@ ja:
       like:
         like-slang: "いいねした投稿"
         like-count: "いいねの数："
+      new:
+        user-regi: "ユーザー登録"
 
   sessions:
     flash:
       alert: "メールアドレスとパスワードが正しくありません"
+    new:
+      login: "ログイン"
 
+  comments:
+    index:
+      comment-delete: "コメントを削除する"
+    form:
+      comment-write: "コメントを書く"
+      comment-submit: "コメント"
 
   activerecord:
     errors:
