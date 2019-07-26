@@ -37,9 +37,11 @@ vi:
   comments:
     index:
       comment-delete: "Xóa bình luận"
+
     form:
       comment-write: "Nhập bình luận"
       comment-submit: "Bình luận"
+
 
   layouts:
     application:
@@ -47,6 +49,7 @@ vi:
       btn-header2: "Đăng bài"
       btn-header3: "page của tôi"
       btn-header4: "Thoát"
+
 
   admin:
     users:
@@ -61,6 +64,7 @@ vi:
         like-count: "Số lượt thích："
       new:
         user-regi: "Đăng ký"
+
 
   sessions:
     flash:
