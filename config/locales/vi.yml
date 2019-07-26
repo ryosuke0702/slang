@@ -24,6 +24,7 @@ vi:
       edit-label3: "Mức độ KHôNG lịch sự và đối tượng sử dụng"
       alert: "Truy cập không hợp lệ"
       delete-button: "Xoá"
+      edit-button: "Chỉnh sửa"
     new:
       edit-label: "Từ lóng"
       edit-label2: "Ví dụ cách sử dụng"
@@ -31,6 +32,7 @@ vi:
       btn-header2: "Đăng bài"
       place-holder: "Nhập từ lóng?"
       place-holder2: "Nhập ví dụ về cách sử dụng, là ngôn ngữ nói hay ngôn ngữ viết, các thông tin bổ sung khác,..."
+      create-button: "Đăng bài"
     flash:
       alert: "Vui lòng nhập chính xác"
 
@@ -59,6 +61,7 @@ vi:
         user-edit: "Chỉnh sửa"
       edit:
         user-edit: "Chỉnh sửa"
+        delete-button: "Xoá"
       like:
         like-slang: "Bài viết thích"
         like-count: "Số lượt thích："

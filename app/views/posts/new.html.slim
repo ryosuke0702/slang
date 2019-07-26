@@ -13,4 +13,4 @@ h3 = t('.btn-header2')
         = select_tag 'post[category_id]', options_from_collection_for_select(@categories, :id, :name), class: 'form-control'
 
       .submit
-        =f.submit nil, class: 'btn btn-primary'
+        =f.submit t('.create-button'), class: 'btn btn-primary'

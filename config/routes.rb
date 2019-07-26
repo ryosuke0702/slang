@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
+
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
@@ -13,7 +14,6 @@ Rails.application.routes.draw do
     resources :posts do
       resources :likes, only: [:create, :destroy]
       resources :comments
-
     end
     resources :categories
   end

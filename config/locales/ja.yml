@@ -25,6 +25,7 @@ ja:
       edit-label3: "失礼レベル(使える相手)"
       alert: "不正なアクセスです"
       delete-button: "削除"
+      edit-button: "編集"
     new:
       edit-label: "スラング"
       edit-label2: "使用例"
@@ -32,6 +33,7 @@ ja:
       btn-header2: "スラング投稿"
       place-holder: "ここにスラングを入力してください"
       place-holder2: "使用例、書き言葉or話し言葉?、補足情報など"
+      create-button: "Đăng bài"
     flash:
       alert: "正しく入力してください"
 
@@ -54,6 +56,7 @@ ja:
         user-edit: "ユーザー編集"
       edit:
         user-edit: "ユーザー編集"
+        delete-button: "削除"
       like:
         like-slang: "いいねした投稿"
         like-count: "いいねの数："
@@ -218,9 +221,9 @@ ja:
     select:
       prompt: 選択してください
     submit:
-      create: Create Post     #変更した
+      create: 登録する
       submit: 保存する
-      update: Update Post #変更した
+      update: 更新する
   number:
     currency:
       format:
