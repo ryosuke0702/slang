@@ -5,8 +5,6 @@
     - if current_user
       = link_to t('.btn-look'), posts_path, class: 'btn-look'
       = link_to t('.btn-post'), new_post_path, class: 'btn-post'
-      /= link_to 'ログアウト', logout_path, method: :delete
-      /= link_to 'マイページ', [:admin, @user]
       - if current_user.admin?
         = link_to 'ユーザー一覧', admin_users_path, class: 'btn btn-outline-danger'
         = link_to 'ユーザー登録', new_admin_user_path, class: 'btn btn-outline-danger'

@@ -15,4 +15,4 @@ h3 = t('.edit-top')
         =f.submit nil, class: 'btn btn-primary'
       .submit.submit-delete
         - if @post.user_id == current_user.id || current_user.admin?
-        =link_to 'Delete', @post, method: :delete, class: 'btn btn-default'
+        =link_to t('.delete-button'), @post, method: :delete, class: 'btn btn-default'

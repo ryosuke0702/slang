@@ -1,10 +1,10 @@
 h3 = t('.btn-header')
 li.dropdown
   a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
-    span Category
+    span = t('.category')
     span.caret
   ul.dropdown-menu
-    <li><a href="/posts">スラング一覧</a></li>
+    li= link_to t('.category-1'), "/posts"
     li role="separator" class="divider"
     - @categories.each do |category|
       li= link_to category.name, category
