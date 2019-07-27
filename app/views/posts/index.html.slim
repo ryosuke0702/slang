@@ -10,6 +10,24 @@ li.dropdown
       /li= link_to category.name, category
       li= link_to t('.category_name', categories: category.name), category
 
+
+
+
+
+    /- @categories.each do |category|
+      li= link_to t('.category_name1'), category
+      li= link_to t('.category_name2'), category
+      li= link_to t('.category_name3'), category
+      li= link_to t('.category_name4'), category
+      li= link_to t('.category_name5'), category
+      li= link_to t('.category_name6'), category
+
+
+
+
+
+
+
 .container
   .slang_list
     - @posts.each do |post|

@@ -12,10 +12,22 @@ ja:
       btn-header: "スラング一覧"
       category: "カテゴリー"
       category-1: "カテゴリ一覧"
-      #category-name: "あ"
       category_name: "%{categories}"
 
-      #category_name: "失礼度100%(親友)"
+      category_name1: "失礼度100%(親友)"
+      category_name2: "失礼度70%(友人)"
+      category_name3: "失礼度70%(同級生)"
+      category_name4: "失礼度10%(仲のいい先輩)"
+      category_name5: "失礼度0%(誰でも)"
+      category_name6: "その他"
+
+
+
+
+
+
+
+
 
     show:
       show-top: "スラング詳細画面"

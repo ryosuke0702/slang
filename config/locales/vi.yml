@@ -12,8 +12,13 @@ vi:
       category: "Phân loại theo mức độ không lịch sự"
       category-1: "Tất cả"
       category_name: "%{categories}"
+      category_name1: "Hoàn toàn không lịch sự 100% (sử dụng với bạn bè cực thân thiết)"
+      category_name2: "Không lịch sự 70% (sử dụng với bạn bè)"
+      category_name3: "Không lịch sự lắm 40% (Sử dụng với bạn cùng khóa, cùng lớp)"
+      category_name4: "Lịch sự một chút 10% (Sử dụng được với anh chị khóa thân thiết)"
+      category_name5: "Hoàn toàn lịch sự 0% (sử dụng cho bất kì ai)"
+      category_name6: "Khác"
 
-      #category_name: "Hoàn toàn không lịch sự 100% (sử dụng với bạn bè cực thân thiết)"
     show:
       show-top: "Chi tiết"
       show-comment: "Bình luận"
