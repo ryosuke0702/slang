@@ -161,9 +161,13 @@ body{
   text-align: center;
 }
 
+.time{
+  margin-top: -15px;
+}
+
 .favorite{
   text-align: right;
-  margin-top: -15px;
+  margin-top: -25px;
 }
 
 .toppage-buttons{
@@ -184,4 +188,8 @@ body{
 
 .comment-panel{
   margin-top: -0.5rem;
+}
+
+.comment-area{
+  margin-top: 5rem;
 }

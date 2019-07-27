@@ -7,7 +7,8 @@ li.dropdown
     <li><a href="/posts">スラング一覧</a></li>
     li role="separator" class="divider"
     - @categories.each do |category|
-      li= link_to category.name, category
+      li= link_to t('.category_name', categories: category.name), category
+
 
 .container
   .slang_list

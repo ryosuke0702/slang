@@ -12,11 +12,16 @@ ja:
       btn-header: "スラング一覧"
       category: "カテゴリー"
       category-1: "カテゴリ一覧"
-      category-name: "あ"
+      #category-name: "あ"
+      category_name: "%{categories}"
+
+      #category_name: "失礼度100%(親友)"
+
     show:
       show-top: "スラング詳細画面"
       show-comment: "コメント"
       show-edit: "編集"
+      time: "前"
     edit:
       slang-edit: "編集"
       edit-top: "スラング編集"
@@ -33,7 +38,7 @@ ja:
       btn-header2: "スラング投稿"
       place-holder: "ここにスラングを入力してください"
       place-holder2: "使用例、書き言葉or話し言葉?、補足情報など"
-      create-button: "Đăng bài"
+      create-button: "投稿"
     flash:
       alert: "正しく入力してください"
 
@@ -75,6 +80,10 @@ ja:
     form:
       comment-write: "コメントを書く"
       comment-submit: "コメント"
+
+  categories:
+    show:
+      category_name: "%{categories}"
 
 
 
@@ -158,7 +167,7 @@ ja:
         one: 1秒以内
         other: "%{count}秒未満"
       less_than_x_minutes:
-        one: 1分以内
+        one: 1分
         other: "%{count}分未満"
       over_x_years:
         one: 1年以上

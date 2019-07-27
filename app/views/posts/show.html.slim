@@ -13,6 +13,8 @@ h3 = t('.show-top')
         h4=  @post.name
       .panel-body
         h5= simple_format(h(@post.description), {}, sanitize: false, wrapper_tag: "div")
+    .time
+      =time_ago_in_words(@post.created_at) + t('.time')
     div id="likes_buttons_#{@post.id}"
       = render partial: 'likes/like', locals: { post: @post}
 
@@ -20,7 +22,7 @@ h3 = t('.show-top')
       - if @post.user_id == current_user.id || current_user.admin?
          =link_to t('.show-edit'), edit_post_path,class: 'btn btn-primary'
 
-    div
+    div.comment-area
      h4 = t('.show-comment')
      .panel.panel-default.comment-panel
        #comments_area

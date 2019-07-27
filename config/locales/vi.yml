@@ -11,11 +11,14 @@ vi:
       btn-header: "Danh sách từ lóng"
       category: "Phân loại theo mức độ không lịch sự"
       category-1: "Tất cả"
-      category.name: "a"
+      category_name: "%{categories}"
+
+      #category_name: "Hoàn toàn không lịch sự 100% (sử dụng với bạn bè cực thân thiết)"
     show:
       show-top: "Chi tiết"
       show-comment: "Bình luận"
       show-edit: "Chỉnh sửa"
+      time: " trước"
     edit:
       slang-edit: "Chỉnh sửa"
       edit-top: "Chỉnh sửa slang"
@@ -74,3 +77,54 @@ vi:
       alert: "Địa chỉ email và mật khẩu không chính xác"
     new:
       login: "Đăng nhập"
+
+  categories:
+    show:
+      category_name: "%{categories}"
+
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: khoảng 1 tiéng
+        other: 約%{count}時間
+      about_x_months:
+        one: khoảng 1 tháng
+        other: 約%{count}ヶ月
+      about_x_years:
+        one: khoảng 1 năm
+        other: 約%{count}年
+      almost_x_years:
+        one: 1年弱
+        other: "%{count}年弱"
+      half_a_minute: 30秒前後
+      less_than_x_seconds:
+        one: 1秒以内
+        other: "%{count}秒未満"
+      less_than_x_minutes:
+        one: 1 phút
+        other: "%{count}分未満"
+      over_x_years:
+        one: 1年以上
+        other: "%{count}年以上"
+      x_seconds:
+        one: 1秒
+        other: "%{count}秒"
+      x_minutes:
+        one: 1分
+        other: "%{count} phút"
+      x_days:
+        one: 1日
+        other: "%{count} ngày"
+      x_months:
+        one: 1ヶ月
+        other: "%{count} tháng"
+      x_years:
+        one: 1年
+        other: "%{count} năm"
+    prompts:
+      second: giây
+      minute: phút
+      hour: tiếng
+      day: ngày
+      month: tháng
+      year: năm
