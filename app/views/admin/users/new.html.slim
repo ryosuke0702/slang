@@ -12,10 +12,10 @@ h3 = t('.user-regi')
 
       .form-group
         = f.label :password
-        = f.password_field :password, class: 'form-control'
+        = f.password_field :password, class: 'form-control', placeholder: t('.place-holder')
       .form-group
         = f.label :password_confirmation, "Confirmation"
-        = f.password_field :password_confirmation, class: 'form-control'
+        = f.password_field :password_confirmation, class: 'form-control', placeholder: t('.place-holder2')
 
         - if current_user
           .form-check

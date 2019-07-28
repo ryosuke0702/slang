@@ -79,6 +79,8 @@ ja:
         like-count: "いいねの数："
       new:
         user-regi: "ユーザー登録"
+        place-holder: "6文字以上"
+        place-holder2: "パスワード確認"
 
   sessions:
     flash:
@@ -96,6 +98,7 @@ ja:
   categories:
     show:
       category_name: "%{categories}"
+      category-1: "カテゴリ一覧"
 
 
 
@@ -206,6 +209,7 @@ ja:
       day: 日
       month: 月
       year: 年
+
   errors:
     format: "%{attribute}%{message}"
     messages:
