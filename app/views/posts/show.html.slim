@@ -24,7 +24,7 @@
            =link_to t('.show-edit'), edit_post_path,class: 'btn btn-primary'
 
       div.comment-area
-       h4 = t('.show-comment')
+       .glyphicon.glyphicon-comment
        .panel.panel-default.comment-panel
          #comments_area
            = render partial: 'comments/index', locals: { comments: @comments }
