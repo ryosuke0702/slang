@@ -13,8 +13,14 @@ span= @user.likes.count
         .panel-body
           = post.description
         .panel-footer
-          .user_name.glyphicon.glyphicon-user
-            = link_to post.user.name, post
+          .user_name
+            .glyphicon.glyphicon-user
+            = post.user.name
 /.pagi_nation
   = paginate @posts
   /= page_entries_info @posts
+
+  /.panel-footer
+    .user_name
+      .glyphicon.glyphicon-user
+      = post.user.name
