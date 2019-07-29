@@ -14,6 +14,13 @@ ja:
       category-1: "カテゴリ一覧"
       category_name: "%{categories}"
 
+      top-text: "ベトナム語のスラングを勉強できます"
+      top-text2: "スラングで友人を驚かせてみよう"
+      btn-look: "スラングをみる"
+      btn-post: "スラングを投稿する"
+      btn-login: "ログイン"
+      btn-user: "ユーザー登録"
+
       category_name1: "失礼度100%(親友)"
       category_name2: "失礼度70%(友人)"
       category_name3: "失礼度70%(同級生)"
@@ -64,6 +71,8 @@ ja:
       btn-header2: "スラング投稿"
       btn-header3: "マイページ"
       btn-header4: "ログアウト"
+      btn-login: "ログイン"
+      btn-user: "ユーザー登録"
 
   admin:
     users:

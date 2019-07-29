@@ -7,7 +7,7 @@ html
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    meta name="viewport" content="width=device-width"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
   body
     nav.navbar.navbar-default.navbar-expand-lg.navbar-light.bg-light.fixed-top
       .container-fluid
@@ -22,27 +22,29 @@ html
 
             #bs-example-navbar-collapse-1.collapse.navbar-collapse
               ul.nav.navbar-nav.navbar-right.toggle-menu
-
                 - if I18n.locale.to_s == "vi"
                   li= link_to('日本語', :locale => 'ja')
                 - else
                   li= link_to('Tiếng Việt', :locale => 'vi')
+                li= link_to t('.btn-header'), posts_path, class:"btn-header"
                 - if current_user
-                  li= link_to t('.btn-header'), posts_path, class:"btn-header"
                   li= link_to t('.btn-header2'), new_post_path, class:"btn-header"
                   - if @user
                     li= link_to t('.btn-header3'), admin_user_path(current_user), class:"btn-header"
+                    - if current_user.admin?
+                      li= link_to 'ユーザー一覧', admin_users_path, class: 'btn btn-outline-danger'
+                      li= link_to 'ユーザー登録', new_admin_user_path, class: 'btn btn-outline-danger'
                   li= link_to t('.btn-header4'), logout_path, method: :delete, class:"btn-header"
+                - else
+                  li= link_to t('.btn-login'), '/login', class: 'btn-login'
+                  li= link_to t('.btn-user'), new_admin_user_path, class: 'btn-user'
 
-        
-    .container
-      /.username
-        - if current_user
-          = current_user.name
-      - if flash.notice.present?
-        .alert.alert-success= flash.notice
-      - elsif flash.alert.present?
-        .alert.alert-danger= flash.alert
+    .content
+      .container
+        - if flash.notice.present?
+          .alert.alert-success= flash.notice
+        - elsif flash.alert.present?
+          .alert.alert-danger= flash.alert
 
       = yield
 

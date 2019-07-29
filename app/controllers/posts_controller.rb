@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  skip_before_action :login_required, only: [:top]
+  skip_before_action :login_required, only: [:top, :index]
 
   def index
     @user = User.find_by(id: session[:user_id])#マイページ

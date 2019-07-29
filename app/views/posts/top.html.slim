@@ -1,6 +1,7 @@
-.top
-  h4 = t('.top-text')
-  h4 = t('.top-text2')
+/.top
+  .top-textes
+    h4 = t('.top-text')
+    h4 = t('.top-text2')
   .toppage-buttons
     - if current_user
       = link_to t('.btn-look'), posts_path, class: 'btn-look'

@@ -1,9 +1,10 @@
-h3 ユーザー一覧
+.container
+  h3 ユーザー一覧
 
-- @users.each do |user|
-  p
-  = link_to user.name, [:admin, user]
-  = user.email
-  = user.admin? ? '管理者権限あり' : '管理者権限なし'
-  = user.created_at
-  = user.updated_at
+  - @users.each do |user|
+    p
+    = link_to user.name, [:admin, user]
+    = user.email
+    = user.admin? ? '管理者権限あり' : '管理者権限なし'
+    = user.created_at
+    = user.updated_at

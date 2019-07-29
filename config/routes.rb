@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get '/admin/users/:id/favorite', to: 'users#like'
     end
 
-    root to: 'posts#top'
+    root to: 'posts#index'
     resources :posts do
       resources :likes, only: [:create, :destroy]
       resources :comments
