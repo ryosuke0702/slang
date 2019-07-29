@@ -1,8 +1,8 @@
 .top
   .top-textes
     .top-title VietnamSlang
-    h4 = t('.top-text')
-    h4 = t('.top-text2')
+    p= t('.top-text')
+    p= t('.top-text2')
   /.toppage-buttons
     - if current_user
       = link_to t('.btn-look'), posts_path, class: 'btn-look'

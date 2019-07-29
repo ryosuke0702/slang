@@ -116,12 +116,6 @@
   background-size: cover;
   height: 50vh;
   width: 100vw;
-
-  //left: 50%;
-  //transform: translateX(-50%);
-  //height: 450px;
-  //width:100vw;
-  //opacity: 0.4;
   margin-top:-18px;
   justify-content: space-around;
   align-items: center;
@@ -130,24 +124,23 @@
   color: white;
 }
 
+.top-textes{
+  font-size: 20px;
+}
+
 @media screen and (max-width: 640px){
 .top{
-    height: 180px;
+    height: 400px;
 }
 .top-textes{
-    //margin-top: 200px;
+    font-size: 14px;
 }
-
-
 }
 
 .top-text{
   margin-top:25px;
 }
 
-.top-textes{
-
-}
 
 body{
   padding-top: 5.5rem;
@@ -218,4 +211,8 @@ body{
 
 .comment-area{
   margin-top: 5rem;
+}
+
+.glyphicon,.glyphicon-comment{
+  padding-bottom: 10px;
 }
