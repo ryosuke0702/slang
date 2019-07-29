@@ -1,26 +1,27 @@
-h3 = t('.user-regi')
-.row
-  .col-md-6.col-md-offset-3
-    = form_with model: [:admin, @user], local: true do |f|
-      = render 'shared/error_messages'
-      .form-group
-        = f.label :name
-        = f.text_field :name, class: 'form-control'
-      .form-group
-        = f.label :email
-        = f.email_field :email, class: 'form-control'
+.container
+  h3 = t('.user-regi')
+  .row
+    .col-md-6.col-md-offset-3
+      = form_with model: [:admin, @user], local: true do |f|
+        = render 'shared/error_messages'
+        .form-group
+          = f.label :name
+          = f.text_field :name, class: 'form-control'
+        .form-group
+          = f.label :email
+          = f.email_field :email, class: 'form-control'
 
-      .form-group
-        = f.label :password
-        = f.password_field :password, class: 'form-control', placeholder: t('.place-holder')
-      .form-group
-        = f.label :password_confirmation, "Confirmation"
-        = f.password_field :password_confirmation, class: 'form-control', placeholder: t('.place-holder2')
+        .form-group
+          = f.label :password
+          = f.password_field :password, class: 'form-control', placeholder: t('.place-holder')
+        .form-group
+          = f.label :password_confirmation, "Confirmation"
+          = f.password_field :password_confirmation, class: 'form-control', placeholder: t('.place-holder2')
 
-        - if current_user
-          .form-check
-            = f.label :admin, class: 'form-check-label' do
-              = f.check_box :admin, class: 'form-check-input'
-              | 管理者権限
-      .submit
-        = f.submit t('.user-regi'), class: "btn btn-primary"
+          - if current_user
+            .form-check
+              = f.label :admin, class: 'form-check-label' do
+                = f.check_box :admin, class: 'form-check-input'
+                | 管理者権限
+        .submit
+          = f.submit t('.user-regi'), class: "btn btn-primary"

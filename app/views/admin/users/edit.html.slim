@@ -1,28 +1,29 @@
-h3 = t('.user-edit')
-.row
-  .col-md-6.col-md-offset-3
-    = form_with model: [:admin, @user], local: true do |f|
-      - if current_user.admin?
-        .form-check
-          = f.label :admin, class: 'form-check-label' do
-            = f.check_box :admin, class: 'form-check-input'
-            | 管理者権限
+.container
+  h3 = t('.user-edit')
+  .row
+    .col-md-6.col-md-offset-3
+      = form_with model: [:admin, @user], local: true do |f|
+        - if current_user.admin?
+          .form-check
+            = f.label :admin, class: 'form-check-label' do
+              = f.check_box :admin, class: 'form-check-input'
+              | 管理者権限
 
-      .form-group
-        = f.label :name
-        = f.text_field :name, class: 'form-control'
-      .form-group
-        = f.label :email
-        = f.email_field :email, class: 'form-control'
+        .form-group
+          = f.label :name
+          = f.text_field :name, class: 'form-control'
+        .form-group
+          = f.label :email
+          = f.email_field :email, class: 'form-control'
 
-      .form-group
-        = f.label :password
-        = f.password_field :password, class: 'form-control'
-      .form-group
-        = f.label :password_confirmation, "Confirmation"
-        = f.password_field :password_confirmation, class: 'form-control'
-      .submit
-        = f.submit t('.user-edit'), class: "btn btn-primary"
-      .submit.submit-delete
-        - if @user == current_user || current_user.admin?
-          = link_to t('.delete-button'), [:admin, @user], method: :delete, data: { confirm: "「#{@user.name}」を削除します。よろしいですか？"}, class: 'btn btn-default'
+        .form-group
+          = f.label :password
+          = f.password_field :password, class: 'form-control'
+        .form-group
+          = f.label :password_confirmation, "Confirmation"
+          = f.password_field :password_confirmation, class: 'form-control'
+        .submit
+          = f.submit t('.user-edit'), class: "btn btn-primary"
+        .submit.submit-delete
+          - if @user == current_user || current_user.admin?
+            = link_to t('.delete-button'), [:admin, @user], method: :delete, data: { confirm: "「#{@user.name}」を削除します。よろしいですか？"}, class: 'btn btn-default'

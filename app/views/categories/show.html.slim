@@ -1,16 +1,17 @@
-h3 = @category.name
-li.dropdown
-  a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
-    span Category
-    span.caret
-  ul.dropdown-menu
-    li= link_to t('.category-1'), "/posts"
-    li role="separator" class="divider"
-    - @categories.each do |category|
-      li= link_to t('.category_name', categories: category.name), category
-
-
 .container
+  h3 = @category.name
+  li.dropdown
+    a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+      span Category
+      span.caret
+    ul.dropdown-menu
+      li= link_to t('.category-1'), "/posts"
+      li role="separator" class="divider"
+      - @categories.each do |category|
+        li= link_to t('.category_name', categories: category.name), category
+
+
+
   .slang_list
     - @posts.each do |post|
       .col-lg-6.col-md-6.col-sm-12
@@ -24,6 +25,6 @@ li.dropdown
               .glyphicon.glyphicon-user
               = post.user.name
 
-.pagi_nation
+  .pagi_nation
   = paginate @posts
   /= page_entries_info @posts

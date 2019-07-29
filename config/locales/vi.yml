@@ -19,6 +19,13 @@ vi:
       category_name5: "Hoàn toàn lịch sự 0% (sử dụng cho bất kì ai)"
       category_name6: "Khác"
 
+      top-text: "Cùng nhau học từ lóng tiếng Việt"
+      top-text2: "Hãy chia sẻ kiến thức của bạn cho mọi người nhé"
+      btn-look: "Danh sách từ lóng"
+      btn-post: "Đăng bài"
+      btn-login: "Đăng nhập"
+      btn-user: "Đăng ký"
+
     show:
       show-top: "Chi tiết"
       show-comment: "Bình luận"
@@ -59,6 +66,8 @@ vi:
       btn-header2: "Đăng bài"
       btn-header3: "page của tôi"
       btn-header4: "Thoát"
+      btn-login: "Đăng nhập"
+      btn-user: "Đăng ký"
 
 
   admin:
@@ -88,6 +97,7 @@ vi:
   categories:
     show:
       category_name: "%{categories}"
+      category-1: "Tất cả"
 
   datetime:
     distance_in_words:
