@@ -93,13 +93,13 @@ vi:
     distance_in_words:
       about_x_hours:
         one: khoảng 1 tiéng
-        other: 約%{count}時間
+        other: khoảng %{count} tiéng
       about_x_months:
         one: khoảng 1 tháng
-        other: 約%{count}ヶ月
+        other: khoảng %{count} tháng
       about_x_years:
         one: khoảng 1 năm
-        other: 約%{count}年
+        other: khoảng %{count} năm
       almost_x_years:
         one: 1年弱
         other: "%{count}年弱"
@@ -109,13 +109,13 @@ vi:
         other: "%{count}秒未満"
       less_than_x_minutes:
         one: 1 phút
-        other: "%{count}分未満"
+        other: "%{count} phút"
       over_x_years:
         one: 1年以上
         other: "%{count}年以上"
       x_seconds:
         one: 1秒
-        other: "%{count}秒"
+        other: "%{count} giây"
       x_minutes:
         one: 1分
         other: "%{count} phút"
