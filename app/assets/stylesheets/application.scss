@@ -96,14 +96,15 @@
   padding-bottom: 1rem !important;
 }
 
-                            //container系
+                            //content系
 .dropdown{
   list-style-type:none;
 }
 
 .top-title{
   font-size: 32px;
-  color: white
+  color: white;
+  padding-bottom:30px;
 }
 
 .top{
@@ -125,7 +126,7 @@
 }
 
 .top-textes{
-  font-size: 20px;
+  font-size: 17px;
 }
 
 @media screen and (max-width: 640px){
