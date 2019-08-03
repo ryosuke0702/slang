@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   before_action :login_required
   before_action :get_category
-  PER = 9
+  PER = 12
   include SessionsHelper
 
   protect_from_forgery with: :exception
