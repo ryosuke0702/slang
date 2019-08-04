@@ -39,8 +39,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params.merge(user_id: current_user.id))
+    #@user = User.find_by(id: @post.user_id) #通知のために書いた
 
     if @post.save
+      #NotificationMailer.post_mail(@user, @post).deliver_now #投稿時にメールで通知
        redirect_to @post, notice: "Posted「#{@post.name}」"
     else
       flash.now[:alert] = t'posts.flash.alert'
