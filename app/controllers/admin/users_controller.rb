@@ -33,13 +33,14 @@ class Admin::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      NotificationMailer.complete_mail(@user).deliver_now #登録時にメールで通知
       log_in @user
-      redirect_to admin_user_path(@user), notice: "Created「#{@user.name}」"
+      redirect_to admin_user_path(@user), notice: "「#{@user.name}」を登録しました"
     else
       render :new
     end
   end
+
+
 
   def edit
     @user = User.find(params[:id])

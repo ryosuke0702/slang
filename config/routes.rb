@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
 
+
+  namespace :admin do
+    resources :users
+    get '/admin/users/:id/favorite', to: 'users#like'
+  end
+
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
