@@ -1,6 +1,4 @@
 class Admin::UsersController < ApplicationController
-  #issue2のコメントです
-  #コメント
   skip_before_action :login_required, only: [:new, :create]
 
   def index
@@ -13,7 +11,7 @@ class Admin::UsersController < ApplicationController
   def show
     @user = User.find_by(id: session[:user_id])#マイページ
     @users = User.find(params[:id])
-    @posts = @users.posts.all.order(created_at: :desc).page(params[:page]).per(PER)
+    @posts = @users.posts.all.order(created_at: :desc).page(params[:page]).per(PER) #新しい順に表示、ページごとの取得数
   end
 
   def like
@@ -33,35 +31,14 @@ class Admin::UsersController < ApplicationController
 
 
   def create
-    if env['omniauth.auth'].present?
-        # Facebookログイン
-        @user  = User.from_omniauth(env['omniauth.auth'])
-        result = @user.save(context: :facebook_login)
-        fb       = "Facebook"
+    @user = User.new(user_params)
+    if @user.save
+      log_in @user
+      redirect_to admin_user_path(@user), notice: "「#{@user.name}」を登録しました"
     else
-        # 通常サインアップ
-        @user = User.new(user_params)
-        if @user.save
-          log_in @user
-          redirect_to admin_user_path(@user), notice: "「#{@user.name}」を登録しました"
-        else
-          render :new
-        end
-    end
-    if result
-        sign_in @user
-        flash[:success] = "#{fb}ログインしました。"
-        redirect_to @user
-    else
-        if fb.present?
-            redirect_to auth_failure_path
-        else
-            render 'new'
-        end
+      render :new
     end
   end
-
-
 
 
 
@@ -78,7 +55,7 @@ class Admin::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to admin_user_path(@user), notice: "「#{@user.name}」を更新しました"
+      redirect_to admin_user_path(@user), notice: "Updated「#{@user.name}」"
     else
       render :edit
     end
@@ -87,7 +64,8 @@ class Admin::UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to admin_users_url, notice: "「#{@user.name}」を削除しました"
+    NotificationMailer.destroy_mail(@user).deliver_now #メールで通知
+    redirect_to admin_users_url, notice: "Deleted「#{@user.name}」"
   end
 
   private

@@ -1,5 +1,117 @@
 ---
 ja:
+  posts:
+    top:
+      top-text: "ベトナム語のスラングを勉強できます"
+      top-text2: "スラングで友人を驚かせてみよう"
+      btn-look: "スラングをみる"
+      btn-post: "スラングを投稿する"
+      btn-login: "ログイン"
+      btn-user: "ユーザー登録"
+    index:
+      btn-header: "スラング一覧"
+      category: "カテゴリー"
+      category-1: "カテゴリ一覧"
+      category_name: "%{categories}"
+
+      top-text: "ベトナム語のスラングを勉強できます"
+      top-text2: "スラングで友人を驚かせてみよう"
+      btn-look: "スラングをみる"
+      btn-post: "スラングを投稿する"
+      btn-login: "ログイン"
+      btn-user: "ユーザー登録"
+
+      category_name1: "失礼度100%(親友)"
+      category_name2: "失礼度70%(友人)"
+      category_name3: "失礼度70%(同級生)"
+      category_name4: "失礼度10%(仲のいい先輩)"
+      category_name5: "失礼度0%(誰でも)"
+      category_name6: "その他"
+
+
+
+
+
+
+
+
+
+    show:
+      show-top: "スラング詳細画面"
+      show-comment: "コメント"
+      show-edit: "編集"
+      time: "前"
+    edit:
+      slang-edit: "編集"
+      edit-top: "スラング編集"
+      edit-label: "スラング"
+      edit-label2: "使用例"
+      edit-label3: "失礼レベル(使える相手)"
+      alert: "不正なアクセスです"
+      delete-button: "削除"
+      edit-button: "編集"
+    new:
+      edit-label: "スラング"
+      edit-label2: "使用例"
+      edit-label3: "失礼レベル(使える相手)"
+      btn-header2: "スラング投稿"
+      place-holder: "ここにスラングを入力してください"
+      place-holder2: "使用例、書き言葉or話し言葉?、補足情報など"
+      create-button: "投稿"
+    flash:
+      alert: "正しく入力してください"
+
+  comments:
+    index:
+      comment-delete: "コメントを削除する"
+
+  layouts:
+    application:
+      btn-header: "スラング一覧"
+      btn-header2: "スラング投稿"
+      btn-header3: "マイページ"
+      btn-header4: "ログアウト"
+      btn-login: "ログイン"
+      btn-user: "ユーザー登録"
+
+  admin:
+    users:
+      show:
+        like-slang: "いいねした投稿"
+        slang-count: "投稿数："
+        user-edit: "ユーザー編集"
+      edit:
+        user-edit: "ユーザー編集"
+        delete-button: "削除"
+      like:
+        like-slang: "いいねした投稿"
+        like-count: "いいねの数："
+      new:
+        user-regi: "ユーザー登録"
+        place-holder: "6文字以上"
+        place-holder2: "パスワード確認"
+
+  sessions:
+    flash:
+      alert: "メールアドレスとパスワードが正しくありません"
+    new:
+      login: "ログイン"
+
+  comments:
+    index:
+      comment-delete: "コメントを削除する"
+    form:
+      comment-write: "コメントを書く"
+      comment-submit: "コメント"
+
+  categories:
+    show:
+      category_name: "%{categories}"
+      category-1: "カテゴリ一覧"
+
+
+
+
   activerecord:
     errors:
       messages:
@@ -17,7 +129,7 @@ ja:
     - 金
     - 土
     abbr_month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -43,7 +155,7 @@ ja:
       long: "%Y年%m月%d日(%a)"
       short: "%m/%d"
     month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -79,7 +191,7 @@ ja:
         one: 1秒以内
         other: "%{count}秒未満"
       less_than_x_minutes:
-        one: 1分以内
+        one: 1分
         other: "%{count}分未満"
       over_x_years:
         one: 1年以上
@@ -106,6 +218,7 @@ ja:
       day: 日
       month: 月
       year: 年
+
   errors:
     format: "%{attribute}%{message}"
     messages:

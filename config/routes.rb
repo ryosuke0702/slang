@@ -1,23 +1,26 @@
 Rails.application.routes.draw do
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
 
-#facebookログイン
-  get '/auth/:provider/callback',    to: 'users#create',       as: :auth_callback
-  get '/auth/failure',               to: 'users#auth_failure', as: :auth_failure
 
   namespace :admin do
     resources :users
     get '/admin/users/:id/favorite', to: 'users#like'
   end
 
-  root to: 'posts#top'
-  resources :posts do
-    resources :likes, only: [:create, :destroy]
-    resources :comments
+    get '/login', to: 'sessions#new'
+    post '/login', to: 'sessions#create'
+    delete '/logout', to: 'sessions#destroy'
 
+    namespace :admin do
+      resources :users
+      get '/admin/users/:id/favorite', to: 'users#like'
+    end
+
+    root to: 'posts#index'
+    resources :posts do
+      resources :likes, only: [:create, :destroy]
+      resources :comments
+    end
+    resources :categories
   end
-  resources :categories
-  #get '/categories/:id', to:'categories#show'
 end

@@ -1,23 +1,25 @@
-h3= @users.name
-p
-  - if @users == current_user || current_user.admin?
-    = link_to 'ユーザー編集', edit_admin_user_path, class: 'btn btn-primary'
-.btn.btn-default
-  = link_to "いいねしたスラング", :controller => "users", :action => "like"
-
-h3= @users.name + 'さんの投稿スラング一覧'
-span 投稿スラング数:
-span= @users.posts.count
-
 .container
-  - @posts.each do |post|
-    .col-lg-4.col-md-6.col-sm-12
-      .panel.panel-default
-        .panel-heading
-          h4= link_to post.name, post
-        .panel-body
-          = post.description
+  h3= @users.name
+  span = t('.slang-count')
+  span= @users.posts.count
+  p
+    - if @users == current_user || current_user.admin?
+      = link_to t('.user-edit'), edit_admin_user_path, class: 'btn btn-primary'
+  .btn.btn-default
+    = link_to t('.like-slang'), :controller => "users", :action => "like"
 
-.pagi_nation
-  = paginate @posts
-  /= page_entries_info @posts
+  /h3= @users.name + 'さんの投稿スラング一覧'
+
+
+  .container
+    - @posts.each do |post|
+      .col-lg-6.col-md-6.col-sm-12
+        .panel.panel-default
+          .panel-heading
+            = link_to post.name, post
+          .panel-body
+            = post.description
+
+  .pagi_nation
+    = paginate @posts
+    /= page_entries_info @posts

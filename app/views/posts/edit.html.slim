@@ -1,18 +1,20 @@
-h3 スラング編集
-.row
-  .col-md-6.col-md-offset-3
-    = form_with model: @post, local: true do |f|
-      .form-group
-        =f.label 'スラング'
-        =f.text_field :name, class: 'form-control'
-      .form-group
-        =f.label '使用例'
-        =f.text_area :description, rows: 6, class: 'form-control'
-      .form-group
-        =f.label '失礼レベル(使える相手)'
-        = select_tag 'post[category_id]', options_from_collection_for_select(@categories, :id, :name), class: 'form-control'
-      .submit
-        =f.submit nil, class: 'btn btn-primary'
-      .submit.submit-delete
-        - if @post.user_id == current_user.id || current_user.admin?
-        =link_to 'スラング削除', @post, method: :delete, class: 'btn btn-default'
+.container
+  h3 = t('.edit-top')
+  .row
+    .col-md-6.col-md-offset-3
+      = form_with model: @post, local: true do |f|
+        .form-group
+          =f.label t('.edit-label')
+          =f.text_field :name, class: 'form-control'
+        .form-group
+          =f.label t('.edit-label2')
+          =f.text_area :description, rows: 6, class: 'form-control'
+        .form-group
+          =f.label t('.edit-label3')
+          = select_tag 'post[category_id]', options_from_collection_for_select(@categories, :id, :name), class: 'form-control'
+        .submit
+          =f.submit t('.edit-button'), class: 'btn btn-primary'
+        .submit.submit-delete
+          - if @post.user_id == current_user.id || current_user.admin?
+          =link_to t('.delete-button'), @post, method: :delete, class: 'btn btn-default'
+            /nilを消したのは果たして！

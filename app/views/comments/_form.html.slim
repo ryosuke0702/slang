@@ -1,4 +1,4 @@
 = form_with(model: [post, comment] ) do |form|
-  = form.text_area :content, rows: 4, placeholder: 'コメント入力', class:"comment-box"
+  = form.text_area :content, rows: 4, placeholder: t('.comment-write'), class:"comment-box"
   .actions
-    = form.submit "コメントをする", class: 'btn btn-primary'
+    = form.submit t('.comment-submit'), class: 'btn btn-primary'

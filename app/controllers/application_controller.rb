@@ -2,13 +2,27 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   before_action :login_required
   before_action :get_category
-  PER = 9
+  PER = 12
   include SessionsHelper
+
+  protect_from_forgery with: :exception
+  before_action :set_locale
 
   def get_category
     @categories = Category.all
   end
 
+  def set_locale
+    I18n.locale = locale
+  end
+
+  def locale
+    @locale ||= params[:locale] || I18n.default_locale
+  end
+
+  def default_url_options(options={})
+    options.merge(locale: locale)
+  end
 
   private
 

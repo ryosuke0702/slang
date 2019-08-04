@@ -1,3 +1,4 @@
+
 h1 ログイン
 .row
   .col-md-6.col-md-offset-3
@@ -11,4 +12,18 @@ h1 ログイン
       .submit
         = f.submit "ログイン", class: "btn btn-primary"
 
-    = link_to "Facebookでログイン", "/auth/facebook"
+    
+
+.container
+  h1 = t('.login')
+  .row
+    .col-md-6.col-md-offset-3
+      = form_with scope: :session, local: true do |f|
+        .form-group
+          = f.label :email
+          = f.email_field :email, class: 'form-control'
+        .form-group
+          = f.label :password
+          = f.password_field :password, class: 'form-control'
+        .submit
+          = f.submit t('.login'), class: "btn btn-primary"

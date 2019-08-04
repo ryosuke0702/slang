@@ -8,13 +8,13 @@
 
 .panel-heading{
   height: 80px;
-  padding: 20px;
+  padding: 10px;
   font-weight: bold;
 }
 
 .panel-body{
-  height: 150px;
-  padding: 20px;
+  height: 180px;
+  padding: 10px;
 }
 
 .comment-panel{
@@ -23,6 +23,7 @@
 
 .panel,.panel-default{
   margin-top: 2rem;
+  //border-radius: 8px;
 }
 
 .panel-above{
@@ -53,6 +54,10 @@
 }
 
                               //ヘッダー
+.language{
+  list-style-type:none;
+}
+
 .bg-light{
   background-color: #f8f9fa;
 }
@@ -73,6 +78,15 @@
   text-decoration: underline;
 }
 
+.btn-header{
+  //padding: -6px -10px;
+  //color: #8c2a2a;
+  //font-size: 6px;
+  //border: 10px solid grey;
+  //border-radius: 4px;
+  //transition: .3s all;
+}
+
                               //フッター
 .footer{
   text-align: center;
@@ -82,37 +96,59 @@
   padding-bottom: 1rem !important;
 }
 
-                            //container系
+                            //content系
 .dropdown{
   list-style-type:none;
+}
+
+.top-title{
+  font-size: 32px;
+  color: white;
+  padding-bottom:30px;
 }
 
 .top{
   //position: absolute;
   //padding-left: 20px;
   padding-top: 22px;
-  background-image: url("ammie-ngo-690967-unsplash (1).jpg");
+  background-image: url("vietnamslang.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  //width:100vw;
-  //opacity: 0.4;
+  height: 50vh;
+  width: 100vw;
   margin-top:-18px;
   justify-content: space-around;
   align-items: center;
   text-align: center;
+  display: flex;
+  color: white;
+}
+
+.top-textes{
+  font-size: 17px;
+}
+
+@media screen and (max-width: 640px){
+.top{
+    height: 400px;
+}
+.top-textes{
+    font-size: 14px;
+}
 }
 
 .top-text{
   margin-top:25px;
 }
 
+
 body{
   padding-top: 5.5rem;
+  background: #f7f7f7;
 }
 
-.container{
+.content{
   min-height: 85vh;
 }
 
@@ -145,20 +181,24 @@ body{
   text-align: center;
 }
 
-.favorite{
-  text-align: right;
+.time{
   margin-top: -15px;
 }
 
-.toppage-buttons{
+.favorite{
+  text-align: right;
+  margin-top: -25px;
+}
+
+/*.toppage-buttons{
   padding-top: 30px;
   font-weight: bold;
   font-size: 18px;
-}
+}*/
 
 .btn-look,.btn-post,.btn-login,.btn-user{
-  margin-right: 10px;
-  border-bottom : solid 2px #0091ff ;
+  //margin-right: 10px;
+  //border-bottom : solid 2px #0091ff ;
 }
 
                                     //コメント
@@ -168,4 +208,12 @@ body{
 
 .comment-panel{
   margin-top: -0.5rem;
+}
+
+.comment-area{
+  margin-top: 5rem;
+}
+
+.glyphicon,.glyphicon-comment{
+  padding-bottom: 10px;
 }
