@@ -75,3 +75,8 @@ gem 'jquery-ui-rails'
 gem 'slim-rails'
 gem 'html2slim'
 gem 'kaminari'
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+
+gem 'dotenv-rails'

@@ -10,3 +10,5 @@ h1 ログイン
         = f.password_field :password, class: 'form-control'
       .submit
         = f.submit "ログイン", class: "btn btn-primary"
+
+    = link_to "Facebookでログイン", "/auth/facebook"

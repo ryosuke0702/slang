@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+#facebookログイン
+  get '/auth/:provider/callback',    to: 'users#create',       as: :auth_callback
+  get '/auth/failure',               to: 'users#auth_failure', as: :auth_failure
+
   namespace :admin do
     resources :users
     get '/admin/users/:id/favorite', to: 'users#like'
