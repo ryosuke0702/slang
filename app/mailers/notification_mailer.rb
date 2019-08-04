@@ -4,7 +4,7 @@ class NotificationMailer < ApplicationMailer
 #usersコントローラー
   def complete_mail(user)  #ユーザー登録したときにメール通知
     @user = user
-    @url = "http://localhost:3000/#{@user.id}"
+    @url = "https://vietnamslang.herokuapp.com/"
     mail(subject: "COMPLETE join your address" ,to: @user.email)
   end
 
