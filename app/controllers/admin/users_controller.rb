@@ -1,6 +1,4 @@
 class Admin::UsersController < ApplicationController
-  #issue2のコメントです
-  #コメント
   skip_before_action :login_required, only: [:new, :create]
 
   def index
@@ -13,7 +11,7 @@ class Admin::UsersController < ApplicationController
   def show
     @user = User.find_by(id: session[:user_id])#マイページ
     @users = User.find(params[:id])
-    @posts = @users.posts.all.order(created_at: :desc).page(params[:page]).per(PER)
+    @posts = @users.posts.all.order(created_at: :desc).page(params[:page]).per(PER) #新しい順に表示、ページごとの取得数
   end
 
   def like
@@ -35,6 +33,7 @@ class Admin::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      NotificationMailer.complete_mail(@user).deliver_now #登録時にメールで通知
       log_in @user
       redirect_to admin_user_path(@user), notice: "Created「#{@user.name}」"
     else
@@ -64,6 +63,7 @@ class Admin::UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
+    NotificationMailer.destroy_mail(@user).deliver_now #メールで通知
     redirect_to admin_users_url, notice: "Deleted「#{@user.name}」"
   end
 
