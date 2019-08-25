@@ -78,8 +78,8 @@ gem 'kaminari'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem "omniauth-rails_csrf_protection"
+#gem "omniauth-rails_csrf_protection"
 
-gem 'omniauth-google-oauth2'
+#gem 'omniauth-google-oauth2'
 
 gem 'dotenv-rails'

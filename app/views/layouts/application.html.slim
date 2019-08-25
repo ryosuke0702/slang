@@ -8,9 +8,8 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     meta name="viewport" content="width=device-width, initial-scale=1.0"
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   body
-    /script
-      |  window.fbAsyncInit = function() { FB.init({ appId : '357295418270974', cookie : true, xfbml : true, version : 'v4.0' }); FB.AppEvents.logPageView(); }; (function(d, s, id){ var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://connect.facebook.net/en_US/sdk.js"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));
     nav.navbar.navbar-default.navbar-expand-lg.navbar-light.bg-light.fixed-top
       .container-fluid
         .navbar-header
@@ -38,8 +37,8 @@ html
                       li= link_to 'ユーザー登録', new_admin_user_path, class: 'btn btn-outline-danger'
                   li= link_to t('.btn-header4'), logout_path, method: :delete, class:"btn-header"
                 - else
-                  li= link_to t('.btn-login'), '/login', class: 'btn-login'
-                  li= link_to t('.btn-user'), new_admin_user_path, class: 'btn-user'
+                  li= link_to t('.btn-login'), '/login/facebook', class: 'btn-login'
+                  li= link_to t('.btn-user'), '/signup', class: 'btn-user'
 
     .content
       .container

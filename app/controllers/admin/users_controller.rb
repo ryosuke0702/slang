@@ -39,6 +39,15 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+  def facebook #facebookログイン
+    auth = request.env['omniauth.auth']
+    if auth.present?
+      user = User.find_or_create_from_auth(request.env['omniauth.auth'])
+      session[:user_id] = user.id
+      redirect_to root_path, notice: 'Login with Facebook'
+    end
+  end
+
   def edit
     @user = User.find(params[:id])
 
@@ -61,8 +70,8 @@ class Admin::UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    NotificationMailer.destroy_mail(@user).deliver_now #メールで通知
-    redirect_to admin_users_url, notice: "Deleted「#{@user.name}」"
+    #NotificationMailer.destroy_mail(@user).deliver_now #メールで通知
+    redirect_to root_path, notice: "Deleted「#{@user.name}」"
   end
 
   private

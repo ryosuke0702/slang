@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
-      NotificationMailer.comment_mail(@user, @post).deliver_now
+      #NotificationMailer.comment_mail(@user, @post).deliver_now
       render :index
     end
   end

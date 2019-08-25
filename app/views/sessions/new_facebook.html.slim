@@ -1,0 +1,13 @@
+.container
+  h3 = t('.login')
+  .row
+    .col-md-6.col-md-offset-3
+      .panel.panel-default.login-pannel
+        .face_login
+          .btn.btn--large.btn--facebook
+            i.fab.fa-facebook-f
+              =link_to "Login with Facebook", '/auth/facebook',class: "btn facebook_login"
+        .face_login
+          .btn.btn--large.btn--mail
+            i.far.fa-envelope
+              =link_to "Login with Address", '/login',class: "btn facebook_login"
