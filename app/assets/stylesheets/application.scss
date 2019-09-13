@@ -1,5 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+//flash-message
+.flash-message{
+  text-align: center;
+  font-style:bold;
+}
+
 //ログイン
 .login-pannel{
   padding-top: 30px;
@@ -21,7 +27,7 @@
 }
 
 .btn--mail{
-  background: #9F0303;
+  background: #696969;
 
 }
 

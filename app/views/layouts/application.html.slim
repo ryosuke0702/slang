@@ -37,11 +37,11 @@ html
                       li= link_to 'ユーザー登録', new_admin_user_path, class: 'btn btn-outline-danger'
                   li= link_to t('.btn-header4'), logout_path, method: :delete, class:"btn-header"
                 - else
-                  li= link_to t('.btn-login'), '/login/facebook', class: 'btn-login'
-                  li= link_to t('.btn-user'), '/signup', class: 'btn-user'
+                  li= link_to t('.btn-login'), login_facebook_path, class: 'btn-login'
+                  li= link_to t('.btn-user'), signup_path, class: 'btn-user'
 
     .content
-      .container
+      .container.flash-message
         - if flash.notice.present?
           .alert.alert-success= flash.notice
         - elsif flash.alert.present?

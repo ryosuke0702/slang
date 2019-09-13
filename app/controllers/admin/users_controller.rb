@@ -39,18 +39,8 @@ class Admin::UsersController < ApplicationController
     end
   end
 
-  def facebook #facebookログイン
-    auth = request.env['omniauth.auth']
-    if auth.present?
-      user = User.find_or_create_from_auth(request.env['omniauth.auth'])
-      session[:user_id] = user.id
-      redirect_to root_path, notice: 'Login with Facebook'
-    end
-  end
-
   def edit
     @user = User.find(params[:id])
-
     if current_user.admin?
       render :edit
     elsif @current_user.id !=  params[:id].to_i

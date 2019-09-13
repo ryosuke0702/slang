@@ -1,22 +1,16 @@
 class SessionsController < ApplicationController
   skip_before_action :login_required
 
-  def new #まとめられるはず
-    if current_user
-      redirect_to root_path, alert: "不正なアクセスです"
-    end
+  def new #remove(不正アクセス防止)
+    remove
   end
 
   def new_facebook
-    if current_user
-      redirect_to root_path, alert: "不正なアクセスです"
-    end
+    remove
   end
 
   def new_mail
-    if current_user
-      redirect_to root_path, alert: "不正なアクセスです"
-    end
+    remove
   end
 
   def facebook #facebookログイン
@@ -28,7 +22,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  def create #既存のログイン動作
+  def create #既存ログイン
     user = User.find_by(email: session_params[:email])
     if user&.authenticate(session_params[:password])
       session[:user_id] = user.id
@@ -38,7 +32,6 @@ class SessionsController < ApplicationController
       render  :new
     end
   end
-
 
   def destroy
     reset_session

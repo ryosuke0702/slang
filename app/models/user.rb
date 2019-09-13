@@ -24,7 +24,7 @@ class User < ApplicationRecord
     password_digest = "" if auth[:password_digest].nil?
     #image = auth[:info][:image]
 
-    self.find_or_create_by(provider: provider, uid: uid) do |user|
+    self.find_or_create_by(email: email) do |user|
       user.name = name
       user.email = email
       user.password_digest = password_digest
