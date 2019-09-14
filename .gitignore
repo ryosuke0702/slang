@@ -27,8 +27,3 @@
 /config/master.key
 
 /.env.production
-/.env.production
-
-
-# Ignore application configuration
-/config/application.yml
