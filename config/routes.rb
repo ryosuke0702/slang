@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
 
-    get 'auth/:provider/callback', to: 'sessions#facebook' #facebookログイン
+    get 'auth/:provider/callback', to: 'sessions#sns' #facebookログイン
 
     get '/login', to: 'sessions#new'  #メールログインフォーム
     post '/login', to: 'sessions#create'

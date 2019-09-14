@@ -3,11 +3,15 @@
   .row
     .col-md-6.col-md-offset-3
       .panel.panel-default.login-pannel
-        .face_login
+        .button-login-and-signin
           .btn.btn--large.btn--facebook
             i.fab.fa-facebook-f
-              =link_to "Login with Facebook", '/auth/facebook',class: "btn facebook_login"
-        .face_login
+              =link_to "Login with Facebook", '/auth/facebook',class: "btn loginbtn-color"
+        .button-login-and-signin
           .btn.btn--large.btn--mail
             i.far.fa-envelope
-              =link_to "Login with Email", '/login',class: "btn facebook_login"
+              =link_to "Login with Email", '/login',class: "btn loginbtn-color"
+        .button-login-and-signin
+          .btn.btn--large.btn--google
+            i.fab.fa-google
+              = link_to "Login with Google", "/auth/google_oauth2",class: "btn loginbtn-color"
