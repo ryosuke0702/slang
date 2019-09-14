@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     remove
   end
 
-  def facebook #facebookログイン
+  def facebook
     auth = request.env['omniauth.auth']
     if auth.present?
       user = User.find_or_create_from_auth(request.env['omniauth.auth'])
