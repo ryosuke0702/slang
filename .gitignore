@@ -27,4 +27,8 @@
 /config/master.key
 
 /.env.production
-/Users/matsuokaryousuke/slang/.env.production
+/.env.production
+
+
+# Ignore application configuration
+/config/application.yml
