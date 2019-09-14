@@ -13,12 +13,12 @@ class SessionsController < ApplicationController
     remove
   end
 
-  def facebook
+  def sns
     auth = request.env['omniauth.auth']
     if auth.present?
       user = User.find_or_create_from_auth(request.env['omniauth.auth'])
       session[:user_id] = user.id
-      redirect_to root_path, notice: 'Login with Facebook'
+      redirect_to root_path, notice: 'Successfully login'
     end
   end
 

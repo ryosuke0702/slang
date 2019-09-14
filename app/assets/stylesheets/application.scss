@@ -11,11 +11,10 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.facebook_login{
-  //text-align: center;
+.loginbtn-color{
   color: #fff;
 }
-.face_login{
+.button-login-and-signin{
   text-align: center;
   color: #fff;
   margin-top: 30px;
@@ -28,8 +27,12 @@
 
 .btn--mail{
   background: #696969;
-
 }
+
+.btn--google{
+  background: #dc143c;
+}
+
 
 .btn--large {
   width: 280px;
@@ -117,20 +120,12 @@ i.fab,i.far{
 }
 
 .btn-header{
-  //padding: -6px -10px;
-  //color: #8c2a2a;
-  //font-size: 6px;
-  //border: 10px solid grey;
-  //border-radius: 4px;
-  //transition: .3s all;
 }
 
                               //フッター
 .footer{
   text-align: center;
   padding-top: 1rem !important;
-  //padding-bottom: 20px;
-  //margin-top:50px;
   padding-bottom: 1rem !important;
 }
 
@@ -146,8 +141,6 @@ i.fab,i.far{
 }
 
 .top{
-  //position: absolute;
-  //padding-left: 20px;
   padding-top: 22px;
   background-image: url("vietnamslang.jpg");
   background-position: center center;
@@ -206,7 +199,6 @@ body{
   text-align: right;
   font-weight: bold;
   font-size: 15px;
-  //padding-right: 10px
 }
 
 .users_name{
@@ -228,15 +220,7 @@ body{
   margin-top: -25px;
 }
 
-/*.toppage-buttons{
-  padding-top: 30px;
-  font-weight: bold;
-  font-size: 18px;
-}*/
-
 .btn-look,.btn-post,.btn-login,.btn-user{
-  //margin-right: 10px;
-  //border-bottom : solid 2px #0091ff ;
 }
 
                                     //コメント
