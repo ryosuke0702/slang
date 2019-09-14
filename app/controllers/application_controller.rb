@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  helper_method :remove
   helper_method :current_user
   before_action :login_required
   before_action :get_category
@@ -31,6 +32,12 @@ class ApplicationController < ActionController::Base
   end
 
   def login_required
-    redirect_to login_path unless current_user
+    redirect_to login_facebook_path ,alert: "You need to login before continuing" unless current_user
+  end
+
+  def remove
+    if current_user
+      redirect_to root_path, alert: "不正なアクセスです"
+    end
   end
 end

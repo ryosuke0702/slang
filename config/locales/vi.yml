@@ -93,6 +93,10 @@ vi:
       alert: "Địa chỉ email và mật khẩu không chính xác"
     new:
       login: "Đăng nhập"
+    new_facebook:
+      login: "Đăng nhập"
+    new_mail:
+      user-regi: 'Đăng ký'
 
   categories:
     show:

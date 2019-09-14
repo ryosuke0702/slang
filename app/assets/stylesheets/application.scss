@@ -1,6 +1,44 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+//flash-message
+.flash-message{
+  text-align: center;
+  font-style:bold;
+}
 
+//ログイン
+.login-pannel{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.facebook_login{
+  //text-align: center;
+  color: #fff;
+}
+.face_login{
+  text-align: center;
+  color: #fff;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.btn--facebook {
+  background: #305097;
+}
+
+.btn--mail{
+  background: #696969;
+
+}
+
+.btn--large {
+  width: 280px;
+  padding: 14px 0;
+  border-radius: 6px;
+}
+i.fab,i.far{
+  color: #fff;
+}
                       //パネル系
 .row{
   padding-top: 80px;

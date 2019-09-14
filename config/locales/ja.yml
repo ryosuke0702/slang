@@ -96,6 +96,10 @@ ja:
       alert: "メールアドレスとパスワードが正しくありません"
     new:
       login: "ログイン"
+    new_facebook:
+      login: "ログイン"
+    new_mail:
+      user-regi: 'ユーザー登録'
 
   comments:
     index:
