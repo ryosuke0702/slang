@@ -27,8 +27,8 @@ html
                   li= link_to('日本語', :locale => 'ja')
                 - else
                   li= link_to('Tiếng Việt', :locale => 'vi')
-                li= link_to t('.btn-header'), posts_path, class:"btn-header"
                 - if current_user
+                  li= link_to t('.btn-header'), posts_path, class:"btn-header"
                   li= link_to t('.btn-header2'), new_post_path, class:"btn-header"
                   - if @user
                     li= link_to t('.btn-header3'), admin_user_path(current_user), class:"btn-header"
